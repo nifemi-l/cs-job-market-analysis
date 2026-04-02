@@ -4,32 +4,23 @@ preprocess_reddit_text.py
 Step 10 of the project:
 Apply the same text preprocessing used for Sentiment140 to the Reddit posts.
 
-What this script does:
-1. Reads the Step 9 Reddit CSV
-2. Takes the final_text column
-3. Applies the same clean_text() function from preprocessing.py
-4. Saves the cleaned text in a new column called cleaned_text
-5. Drops rows whose cleaned_text becomes empty
-6. Writes a new CSV for the next step
-
-Run from src/:
-    python .\preprocess_reddit_text.py
-
-Optional:
-    python .\preprocess_reddit_text.py --input .\data\reddit\processed\RS_2023-02_final_text.csv --output .\data\reddit\processed\RS_2023-02_cleaned_text.csv
+Run:
+    python src/pipeline/preprocess_reddit_text.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
+
 import pandas as pd
 
-from preprocessing import clean_text
+from utils.preprocessing import clean_text
 
-
-DEFAULT_INPUT = Path("data/reddit/processed/RS_2023-02_final_text.csv")
-DEFAULT_OUTPUT = Path("data/reddit/processed/RS_2023-02_cleaned_text.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_final_text.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_cleaned_text.csv"
 
 REQUIRED_COLUMNS = [
     "id",

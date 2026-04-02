@@ -16,12 +16,8 @@ What this script does:
 3. Keeps only records from the target subreddits
 4. Writes a smaller filtered CSV file for later steps
 
-Notes:
-- This script is designed to work from the src/ folder.
-- It supports both submissions and comments. For submissions, it uses title/selftext.
-  For comments, title will be blank and body will come from the comment body.
-- Your proposal is focused on submissions, but this script is flexible enough
-  to help you test the pipeline on either kind of Reddit file.
+Run:
+    python src/pipeline/filter_reddit_submissions.py --input src/data/reddit/RS_2023-02.zst
 """
 
 import argparse
@@ -34,6 +30,7 @@ from pathlib import Path
 
 import zstandard as zstd
 
+SRC_DIR = Path(__file__).resolve().parent.parent
 
 TARGET_SUBREDDITS = {
     "cscareerquestions",
@@ -43,11 +40,11 @@ TARGET_SUBREDDITS = {
 }
 
 DEFAULT_INPUT_CANDIDATES = [
-    Path("data/reddit/RS_2023-02.zst"),
-    Path("data/reddit/RC_2023-02.zst"),
+    SRC_DIR / "data" / "reddit" / "RS_2023-02.zst",
+    SRC_DIR / "data" / "reddit" / "RC_2023-02.zst",
 ]
 
-DEFAULT_OUTPUT_DIR = Path("data/reddit/filtered")
+DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "filtered"
 PROGRESS_EVERY = 100_000
 
 
@@ -106,11 +103,7 @@ def standardize_record(record):
 def open_reddit_file(path):
     """
     Open a Reddit dump file for line-by-line text reading.
-    Supports:
-    - .zst
-    - .jsonl
-    - .ndjson
-    - plain text JSON lines files
+    Supports .zst, .jsonl, .ndjson, and plain text JSON lines files.
     """
     suffix = path.suffix.lower()
 
@@ -131,7 +124,7 @@ def find_default_input():
         if candidate.exists():
             return candidate
 
-    reddit_dir = Path("data/reddit")
+    reddit_dir = SRC_DIR / "data" / "reddit"
     if reddit_dir.exists():
         for pattern in ("*.zst", "*.jsonl", "*.ndjson", "*.json"):
             matches = sorted(reddit_dir.glob(pattern))
@@ -292,9 +285,9 @@ def main():
 
     if input_path is None:
         print("ERROR: No Reddit input file was found.")
-        print("Put your file inside data/reddit/ and rerun.")
+        print("Put your file inside src/data/reddit/ and rerun.")
         print("Example:")
-        print(r"  python .\filter_reddit_submissions.py --input .\data\reddit\RS_2023-02.zst")
+        print(r"  python src/pipeline/filter_reddit_submissions.py --input src/data/reddit/RS_2023-02.zst")
         sys.exit(1)
 
     if not input_path.exists():

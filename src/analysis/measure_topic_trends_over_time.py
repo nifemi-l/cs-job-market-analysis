@@ -4,33 +4,23 @@ measure_topic_trends_over_time.py
 Step 18 of the project:
 Measure how often each topic appears over time so you can track trend changes.
 
-What this script does:
-1. Reads the Step 16 topic-tagged Reddit CSV
-2. Uses the Step 15 topic bucket definitions
-3. Measures topic frequency by month
-4. Measures topic frequency by project time period
-5. Saves multiple summary CSV files for later plots and analysis
-
-Run from src/:
-    python .\measure_topic_trends_over_time.py
-
-Optional:
-    python .\measure_topic_trends_over_time.py ^
-        --input .\data\reddit\analysis\RS_2023-02_topic_tagged.csv ^
-        --output_dir .\data\reddit\analysis\step18_topic_trends
+Run:
+    python src/analysis/measure_topic_trends_over_time.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
+
 import pandas as pd
 
-from topic_buckets import get_topic_buckets
+from utils.topic_buckets import get_topic_buckets
 
-
-DEFAULT_INPUT = Path("data/reddit/analysis/RS_2023-02_topic_tagged.csv")
-DEFAULT_OUTPUT_DIR = Path("data/reddit/analysis/step18_topic_trends")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "analysis" / "step18_topic_trends"
 
 REQUIRED_BASE_COLUMNS = [
     "id",
@@ -55,7 +45,6 @@ def safe_divide(numerator, denominator):
 def build_full_month_index(year_month_values):
     """
     Build a complete month index from min to max observed month.
-    Example: if months are 2023-02, 2023-04, returns 2023-02, 2023-03, 2023-04.
     """
     cleaned = [
         str(x).strip()
@@ -153,9 +142,6 @@ def main():
         print("ERROR: Input file has no rows.")
         sys.exit(1)
 
-    # ------------------------------------------------------------------
-    # Build full month index
-    # ------------------------------------------------------------------
     print("Building complete month index...")
     full_months = build_full_month_index(df["year_month"].unique())
     if not full_months:
@@ -166,9 +152,6 @@ def main():
     print(f"Number of months in range: {len(full_months)}")
     print()
 
-    # ------------------------------------------------------------------
-    # Monthly totals
-    # ------------------------------------------------------------------
     print("Computing monthly totals...")
     monthly_total_posts = (
         df.groupby("year_month")
@@ -191,9 +174,6 @@ def main():
     print(monthly_base_df.head(12).to_string(index=False))
     print()
 
-    # ------------------------------------------------------------------
-    # Monthly topic trend table (long format)
-    # ------------------------------------------------------------------
     print("Computing monthly topic trends...")
     monthly_long_rows = []
 
@@ -227,9 +207,6 @@ def main():
     print("Monthly topic trends computed.")
     print()
 
-    # ------------------------------------------------------------------
-    # Monthly wide tables
-    # ------------------------------------------------------------------
     print("Creating monthly wide-format tables...")
     monthly_counts_wide = (
         monthly_long_df.pivot(index="year_month", columns="topic_bucket", values="topic_post_count")
@@ -253,9 +230,6 @@ def main():
     print("Monthly wide-format tables created.")
     print()
 
-    # ------------------------------------------------------------------
-    # Time-period summary
-    # ------------------------------------------------------------------
     print("Computing time-period topic summary...")
     valid_time_period_df = df[df["time_period"] != ""].copy()
 
@@ -300,10 +274,6 @@ def main():
     print("Time-period topic summary computed.")
     print()
 
-    # ------------------------------------------------------------------
-    # Subreddit-by-month topic counts
-    # Optional but useful later for deeper trend analysis
-    # ------------------------------------------------------------------
     print("Computing subreddit-by-month topic counts...")
     subreddit_month_rows = []
 
@@ -337,9 +307,6 @@ def main():
     print("Subreddit-by-month topic counts computed.")
     print()
 
-    # ------------------------------------------------------------------
-    # Print quick summaries
-    # ------------------------------------------------------------------
     print("Overall topic totals across the whole dataset:")
     overall_topic_totals = []
     for bucket in bucket_names:
@@ -367,9 +334,6 @@ def main():
     print(time_period_summary_df.head(12).to_string(index=False))
     print()
 
-    # ------------------------------------------------------------------
-    # Save outputs
-    # ------------------------------------------------------------------
     print("Creating output folder if needed...")
     output_dir.mkdir(parents=True, exist_ok=True)
 

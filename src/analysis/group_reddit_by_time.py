@@ -5,35 +5,20 @@ Step 14 of the project:
 Split or group the Reddit posts by time period, such as pre-COVID,
 COVID, and post-COVID, or by month.
 
-What this script does:
-1. Reads the Step 13 prediction CSV
-2. Converts created_utc into datetime
-3. Creates time grouping columns:
-   - created_datetime_utc
-   - year
-   - month
-   - year_month
-   - time_period
-4. Saves a new CSV for later analysis
-
-Run from src/:
-    python .\group_reddit_by_time.py
-
-Optional:
-    python .\group_reddit_by_time.py ^
-        --input .\data\reddit\predictions\RS_2023-02_sentiment_predictions.csv ^
-        --output .\data\reddit\analysis\RS_2023-02_time_grouped.csv
+Run:
+    python src/analysis/group_reddit_by_time.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+
 import pandas as pd
 
-
-DEFAULT_INPUT = Path("data/reddit/predictions/RS_2023-02_sentiment_predictions.csv")
-DEFAULT_OUTPUT = Path("data/reddit/analysis/RS_2023-02_time_grouped.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "predictions" / "RS_2023-02_sentiment_predictions.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_time_grouped.csv"
 
 REQUIRED_COLUMNS = [
     "id",

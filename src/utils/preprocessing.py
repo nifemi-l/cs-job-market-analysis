@@ -20,12 +20,9 @@ SENTIMENT140_COLUMNS = ["label", "id", "date", "flag", "user", "text"]
 def clean_text(text: str) -> str:
     """Strip noise from a single tweet/post so TF-IDF has cleaner tokens."""
     text = text.lower()
-    # tweets are full of links and @mentions that don't help sentiment
     text = re.sub(r"http\S+", "", text)
     text = re.sub(r"@\w+", "", text)
-    # drop everything that isn't a letter or space (punctuation, numbers, emoji, etc.)
     text = re.sub(r"[^a-z\s]", "", text)
-    # collapse runs of whitespace that the above replacements leave behind
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
@@ -39,7 +36,6 @@ def load_sentiment140(path: str) -> pd.DataFrame:
     """
     df = pd.read_csv(path, encoding="latin-1", header=None, names=SENTIMENT140_COLUMNS)
     df = df[["label", "text"]].copy()
-    # original labels: 0 = negative, 4 = positive (no neutral in this dataset)
     df["label"] = df["label"].map({0: 0, 4: 1})
     df.dropna(subset=["label"], inplace=True)
     df["label"] = df["label"].astype(int)

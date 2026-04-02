@@ -4,40 +4,24 @@ create_final_report_outputs.py
 Step 20 of the project:
 Create the final plots, tables, and written summary for the report and presentation.
 
-What this script does:
-1. Reads the Step 16 topic-tagged Reddit CSV
-2. Optionally uses Step 17/18/19 outputs if available
-3. Creates final summary tables
-4. Creates final plots
-5. Creates a written summary in TXT and Markdown
-6. Saves everything into one final output folder
-
-This script is designed to work both:
-- on the current sample dataset
-- later on the full real multi-year dataset
-
-Run from src/:
-    python .\create_final_report_outputs.py
-
-Optional:
-    python .\create_final_report_outputs.py ^
-        --input .\data\reddit\analysis\RS_2023-02_topic_tagged.csv ^
-        --output_dir .\data\reddit\final_outputs
+Run:
+    python src/reporting/create_final_report_outputs.py
 """
 
 import argparse
-from pathlib import Path
 import sys
-import math
+from pathlib import Path
+
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from topic_buckets import get_topic_buckets
+from utils.topic_buckets import get_topic_buckets
 
-
-DEFAULT_INPUT = Path("data/reddit/analysis/RS_2023-02_topic_tagged.csv")
-DEFAULT_OUTPUT_DIR = Path("data/reddit/final_outputs")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "final_outputs"
 
 REQUIRED_COLUMNS = [
     "id",
@@ -263,7 +247,6 @@ def build_topic_monthly_table(df, topic_buckets):
 def build_hypothesis_overview_table(df, topic_buckets):
     rows = []
 
-    # H1
     recruiting_df = df[df["topic_recruiting_pipeline"] == 1].copy()
     pre_df = recruiting_df[recruiting_df["time_period"] == "pre-COVID"].copy()
     post_df = recruiting_df[recruiting_df["time_period"] == "post-COVID"].copy()
@@ -274,12 +257,9 @@ def build_hypothesis_overview_table(df, topic_buckets):
         "status_with_current_data": (
             "ready_for_real_test" if len(pre_df) > 0 and len(post_df) > 0 else "not_fully_testable_with_current_sample"
         ),
-        "current_result_note": (
-            f"pre-COVID recruiting posts={len(pre_df)}, post-COVID recruiting posts={len(post_df)}"
-        ),
+        "current_result_note": f"pre-COVID recruiting posts={len(pre_df)}, post-COVID recruiting posts={len(post_df)}",
     })
 
-    # H2
     layoffs_df = df[df["topic_layoffs_market"] == 1].copy()
     rows.append({
         "hypothesis": "H2",
@@ -287,16 +267,12 @@ def build_hypothesis_overview_table(df, topic_buckets):
         "status_with_current_data": (
             "partially_testable" if len(layoffs_df) > 0 else "not_observable_in_current_sample"
         ),
-        "current_result_note": (
-            f"layoffs-topic posts in current dataset={len(layoffs_df)}"
-        ),
+        "current_result_note": f"layoffs-topic posts in current dataset={len(layoffs_df)}",
     })
 
-    # H3
     author_counts = (
         df[df["author"].fillna("").astype(str).str.strip() != ""]
-        .groupby("author")
-        .size()
+        .groupby("author").size()
     )
     eligible_users = int((author_counts >= 3).sum())
     rows.append({
@@ -308,7 +284,6 @@ def build_hypothesis_overview_table(df, topic_buckets):
         "current_result_note": f"eligible users with >=3 posts={eligible_users}",
     })
 
-    # H4
     num_months = int(df["year_month"].replace("", pd.NA).dropna().nunique())
     rows.append({
         "hypothesis": "H4",
@@ -326,7 +301,6 @@ def save_plot_overall_sentiment_by_time_period(table_df, output_path):
     plot_df = table_df[table_df["total_posts"] > 0].copy()
     if len(plot_df) == 0:
         return False
-
     plt.figure(figsize=(8, 5))
     plt.bar(plot_df["time_period"], plot_df["positive_rate"])
     plt.title("Positive Sentiment Rate by Time Period")
@@ -342,7 +316,6 @@ def save_plot_sentiment_by_subreddit(table_df, output_path):
     plot_df = table_df.copy()
     if len(plot_df) == 0:
         return False
-
     plt.figure(figsize=(8, 5))
     plt.bar(plot_df["subreddit"], plot_df["positive_rate"])
     plt.title("Positive Sentiment Rate by Subreddit")
@@ -360,7 +333,6 @@ def save_plot_topic_positive_rate(table_df, output_path):
     plot_df = plot_df[plot_df["total_posts"] > 0].copy()
     if len(plot_df) == 0:
         return False
-
     plt.figure(figsize=(9, 5))
     plt.bar(plot_df["topic_bucket"], plot_df["positive_rate"])
     plt.title("Positive Sentiment Rate by Topic")
@@ -378,7 +350,6 @@ def save_plot_topic_frequency(table_df, output_path):
     plot_df = plot_df[plot_df["total_posts"] > 0].copy()
     if len(plot_df) == 0:
         return False
-
     plt.figure(figsize=(9, 5))
     plt.bar(plot_df["topic_bucket"], plot_df["total_posts"])
     plt.title("Topic Frequency in Dataset")
@@ -395,7 +366,6 @@ def save_plot_monthly_sentiment(monthly_df, output_path):
     plot_df = monthly_df.copy()
     if len(plot_df) == 0:
         return False
-
     plt.figure(figsize=(10, 5))
     plt.plot(plot_df["year_month"], plot_df["positive_rate"], marker="o")
     plt.title("Monthly Positive Sentiment Rate")
@@ -412,18 +382,15 @@ def save_plot_monthly_topic_trends(topic_monthly_df, output_path):
     plot_df = topic_monthly_df.copy()
     if len(plot_df) == 0:
         return False
-
     pivot_df = (
         plot_df.pivot(index="year_month", columns="topic_bucket", values="topic_posts_in_month")
                .fillna(0)
     )
     if pivot_df.empty:
         return False
-
     plt.figure(figsize=(11, 6))
     for col in pivot_df.columns:
         plt.plot(pivot_df.index, pivot_df[col], marker="o", label=col)
-
     plt.title("Topic Frequency Over Time")
     plt.xlabel("Month")
     plt.ylabel("Topic Post Count")
@@ -443,27 +410,13 @@ def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_d
     summary_lines.append("=" * 70)
     summary_lines.append("")
     summary_lines.append("Dataset overview")
-    summary_lines.append(
-        f"- Total posts analyzed: {int(overall['total_posts']):,}"
-    )
-    summary_lines.append(
-        f"- Positive posts: {int(overall['positive_posts']):,} ({overall['positive_rate']:.2%})"
-    )
-    summary_lines.append(
-        f"- Negative posts: {int(overall['negative_posts']):,} ({overall['negative_rate']:.2%})"
-    )
-    summary_lines.append(
-        f"- Posts with at least one topic tag: {int(overall['posts_with_any_topic']):,} ({overall['share_posts_with_any_topic']:.2%})"
-    )
-    summary_lines.append(
-        f"- Distinct subreddits: {int(overall['num_subreddits'])}"
-    )
-    summary_lines.append(
-        f"- Distinct months: {int(overall['num_months'])}"
-    )
-    summary_lines.append(
-        f"- Distinct time periods: {int(overall['num_time_periods'])}"
-    )
+    summary_lines.append(f"- Total posts analyzed: {int(overall['total_posts']):,}")
+    summary_lines.append(f"- Positive posts: {int(overall['positive_posts']):,} ({overall['positive_rate']:.2%})")
+    summary_lines.append(f"- Negative posts: {int(overall['negative_posts']):,} ({overall['negative_rate']:.2%})")
+    summary_lines.append(f"- Posts with at least one topic tag: {int(overall['posts_with_any_topic']):,} ({overall['share_posts_with_any_topic']:.2%})")
+    summary_lines.append(f"- Distinct subreddits: {int(overall['num_subreddits'])}")
+    summary_lines.append(f"- Distinct months: {int(overall['num_months'])}")
+    summary_lines.append(f"- Distinct time periods: {int(overall['num_time_periods'])}")
     summary_lines.append("")
 
     if len(time_df[time_df["total_posts"] > 0]) > 0:
@@ -492,25 +445,19 @@ def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_d
 
         summary_lines.append("Most frequent topics:")
         for _, row in top_freq.iterrows():
-            summary_lines.append(
-                f"- {row['topic_bucket']}: {int(row['total_posts']):,} posts ({row['share_of_all_posts']:.2%} of all posts)"
-            )
+            summary_lines.append(f"- {row['topic_bucket']}: {int(row['total_posts']):,} posts ({row['share_of_all_posts']:.2%} of all posts)")
 
         summary_lines.append("")
         summary_lines.append("Most positive topics:")
         for _, row in top_pos.iterrows():
             if row["total_posts"] > 0:
-                summary_lines.append(
-                    f"- {row['topic_bucket']}: positive rate {row['positive_rate']:.2%} across {int(row['total_posts']):,} posts"
-                )
+                summary_lines.append(f"- {row['topic_bucket']}: positive rate {row['positive_rate']:.2%} across {int(row['total_posts']):,} posts")
 
         summary_lines.append("")
         summary_lines.append("Most negative topics:")
         for _, row in top_neg.iterrows():
             if row["total_posts"] > 0:
-                summary_lines.append(
-                    f"- {row['topic_bucket']}: negative rate {row['negative_rate']:.2%} across {int(row['total_posts']):,} posts"
-                )
+                summary_lines.append(f"- {row['topic_bucket']}: negative rate {row['negative_rate']:.2%} across {int(row['total_posts']):,} posts")
         summary_lines.append("")
 
     if len(monthly_df) > 0:
@@ -524,19 +471,13 @@ def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_d
     if len(hypothesis_df) > 0:
         summary_lines.append("Hypothesis-testing readiness")
         for _, row in hypothesis_df.iterrows():
-            summary_lines.append(
-                f"- {row['hypothesis']}: {row['status_with_current_data']} ({row['current_result_note']})"
-            )
+            summary_lines.append(f"- {row['hypothesis']}: {row['status_with_current_data']} ({row['current_result_note']})")
         summary_lines.append("")
 
     if int(overall["num_months"]) < 2:
         summary_lines.append("Important note")
-        summary_lines.append(
-            "- This current run is based on a sample month, so time-based comparisons and multi-era hypothesis testing are not yet final."
-        )
-        summary_lines.append(
-            "- When the full dataset is available, rerun the same pipeline to generate the final report and presentation outputs."
-        )
+        summary_lines.append("- This current run is based on a sample month, so time-based comparisons and multi-era hypothesis testing are not yet final.")
+        summary_lines.append("- When the full dataset is available, rerun the same pipeline to generate the final report and presentation outputs.")
         summary_lines.append("")
 
     return "\n".join(summary_lines)
@@ -669,61 +610,30 @@ def main():
     print()
 
     print("Saving final tables...")
-    overall_summary_path = tables_dir / "overall_summary.csv"
-    time_period_sentiment_path = tables_dir / "time_period_sentiment_table.csv"
-    subreddit_sentiment_path = tables_dir / "subreddit_sentiment_table.csv"
-    topic_sentiment_path = tables_dir / "topic_sentiment_table.csv"
-    monthly_sentiment_path = tables_dir / "monthly_sentiment_table.csv"
-    topic_monthly_path = tables_dir / "topic_monthly_table.csv"
-    hypothesis_overview_path = tables_dir / "hypothesis_overview_table.csv"
-
-    overall_summary_df.to_csv(overall_summary_path, index=False, encoding="utf-8")
-    time_period_sentiment_df.to_csv(time_period_sentiment_path, index=False, encoding="utf-8")
-    subreddit_sentiment_df.to_csv(subreddit_sentiment_path, index=False, encoding="utf-8")
-    topic_sentiment_df.to_csv(topic_sentiment_path, index=False, encoding="utf-8")
-    monthly_sentiment_df.to_csv(monthly_sentiment_path, index=False, encoding="utf-8")
-    topic_monthly_df.to_csv(topic_monthly_path, index=False, encoding="utf-8")
-    hypothesis_overview_df.to_csv(hypothesis_overview_path, index=False, encoding="utf-8")
+    overall_summary_df.to_csv(tables_dir / "overall_summary.csv", index=False, encoding="utf-8")
+    time_period_sentiment_df.to_csv(tables_dir / "time_period_sentiment_table.csv", index=False, encoding="utf-8")
+    subreddit_sentiment_df.to_csv(tables_dir / "subreddit_sentiment_table.csv", index=False, encoding="utf-8")
+    topic_sentiment_df.to_csv(tables_dir / "topic_sentiment_table.csv", index=False, encoding="utf-8")
+    monthly_sentiment_df.to_csv(tables_dir / "monthly_sentiment_table.csv", index=False, encoding="utf-8")
+    topic_monthly_df.to_csv(tables_dir / "topic_monthly_table.csv", index=False, encoding="utf-8")
+    hypothesis_overview_df.to_csv(tables_dir / "hypothesis_overview_table.csv", index=False, encoding="utf-8")
     print("Tables saved successfully.")
     print()
 
     print("Creating final plots...")
     created_plots = []
 
-    if save_plot_overall_sentiment_by_time_period(
-        time_period_sentiment_df,
-        plots_dir / "plot_positive_sentiment_by_time_period.png"
-    ):
+    if save_plot_overall_sentiment_by_time_period(time_period_sentiment_df, plots_dir / "plot_positive_sentiment_by_time_period.png"):
         created_plots.append("plot_positive_sentiment_by_time_period.png")
-
-    if save_plot_sentiment_by_subreddit(
-        subreddit_sentiment_df,
-        plots_dir / "plot_positive_sentiment_by_subreddit.png"
-    ):
+    if save_plot_sentiment_by_subreddit(subreddit_sentiment_df, plots_dir / "plot_positive_sentiment_by_subreddit.png"):
         created_plots.append("plot_positive_sentiment_by_subreddit.png")
-
-    if save_plot_topic_positive_rate(
-        topic_sentiment_df,
-        plots_dir / "plot_positive_sentiment_by_topic.png"
-    ):
+    if save_plot_topic_positive_rate(topic_sentiment_df, plots_dir / "plot_positive_sentiment_by_topic.png"):
         created_plots.append("plot_positive_sentiment_by_topic.png")
-
-    if save_plot_topic_frequency(
-        topic_sentiment_df,
-        plots_dir / "plot_topic_frequency.png"
-    ):
+    if save_plot_topic_frequency(topic_sentiment_df, plots_dir / "plot_topic_frequency.png"):
         created_plots.append("plot_topic_frequency.png")
-
-    if save_plot_monthly_sentiment(
-        monthly_sentiment_df,
-        plots_dir / "plot_monthly_positive_sentiment.png"
-    ):
+    if save_plot_monthly_sentiment(monthly_sentiment_df, plots_dir / "plot_monthly_positive_sentiment.png"):
         created_plots.append("plot_monthly_positive_sentiment.png")
-
-    if save_plot_monthly_topic_trends(
-        topic_monthly_df,
-        plots_dir / "plot_monthly_topic_trends.png"
-    ):
+    if save_plot_monthly_topic_trends(topic_monthly_df, plots_dir / "plot_monthly_topic_trends.png"):
         created_plots.append("plot_monthly_topic_trends.png")
 
     print(f"Plots created: {len(created_plots)}")
@@ -732,31 +642,12 @@ def main():
     print()
 
     print("Creating written summaries...")
-    txt_summary = build_written_summary(
-        overall_summary_df,
-        time_period_sentiment_df,
-        subreddit_sentiment_df,
-        topic_sentiment_df,
-        monthly_sentiment_df,
-        hypothesis_overview_df,
-    )
+    txt_summary = build_written_summary(overall_summary_df, time_period_sentiment_df, subreddit_sentiment_df, topic_sentiment_df, monthly_sentiment_df, hypothesis_overview_df)
+    md_summary = build_markdown_summary(overall_summary_df, time_period_sentiment_df, subreddit_sentiment_df, topic_sentiment_df, monthly_sentiment_df, hypothesis_overview_df)
 
-    md_summary = build_markdown_summary(
-        overall_summary_df,
-        time_period_sentiment_df,
-        subreddit_sentiment_df,
-        topic_sentiment_df,
-        monthly_sentiment_df,
-        hypothesis_overview_df,
-    )
-
-    txt_summary_path = summaries_dir / "final_summary.txt"
-    md_summary_path = summaries_dir / "final_summary.md"
-
-    with open(txt_summary_path, "w", encoding="utf-8") as f:
+    with open(summaries_dir / "final_summary.txt", "w", encoding="utf-8") as f:
         f.write(txt_summary)
-
-    with open(md_summary_path, "w", encoding="utf-8") as f:
+    with open(summaries_dir / "final_summary.md", "w", encoding="utf-8") as f:
         f.write(md_summary)
 
     print("Written summaries created.")
@@ -766,35 +657,11 @@ def main():
     print(overall_summary_df.to_string(index=False))
     print()
 
-    print("Preview of topic sentiment table:")
-    print(topic_sentiment_df.head(10).to_string(index=False))
-    print()
-
     print("Final summary")
     print("-" * 70)
     print(f"Tables folder:   {tables_dir}")
     print(f"Plots folder:    {plots_dir}")
     print(f"Summary folder:  {summaries_dir}")
-    print()
-    print("Saved table files:")
-    print(f"  - {overall_summary_path}")
-    print(f"  - {time_period_sentiment_path}")
-    print(f"  - {subreddit_sentiment_path}")
-    print(f"  - {topic_sentiment_path}")
-    print(f"  - {monthly_sentiment_path}")
-    print(f"  - {topic_monthly_path}")
-    print(f"  - {hypothesis_overview_path}")
-    print()
-    print("Saved summary files:")
-    print(f"  - {txt_summary_path}")
-    print(f"  - {md_summary_path}")
-    print()
-    print("Step 20 is complete when:")
-    print("1. the script finishes without errors")
-    print("2. the tables, plots, and written_summary folders are created")
-    print("3. the final CSV summary tables are saved")
-    print("4. the PNG plots are saved")
-    print("5. final_summary.txt and final_summary.md are saved")
     print("=" * 70)
 
 

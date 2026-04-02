@@ -14,20 +14,8 @@ H3: User-level sentiment differs by topic, producing measurable cross-topic
 H4: Increases in AI-related discussion are associated with shifts in overall
     job-market sentiment over time.
 
-What this script does:
-1. Reads the Step 16 topic-tagged Reddit CSV
-2. Uses the Step 15 topic bucket definitions
-3. Tests H1, H2, H3, and H4
-4. Saves multiple CSV outputs plus a human-readable text report
-
-Run from src/:
-    python .\test_project_hypotheses.py
-
-Optional:
-    python .\test_project_hypotheses.py ^
-        --input .\data\reddit\analysis\RS_2023-02_topic_tagged.csv ^
-        --output_dir .\data\reddit\analysis\step19_hypothesis_tests ^
-        --min_user_posts 3
+Run:
+    python src/reporting/test_project_hypotheses.py
 """
 
 import argparse
@@ -35,13 +23,15 @@ import math
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
+
 import pandas as pd
 
-from topic_buckets import get_topic_buckets
+from utils.topic_buckets import get_topic_buckets
 
-
-DEFAULT_INPUT = Path("data/reddit/analysis/RS_2023-02_topic_tagged.csv")
-DEFAULT_OUTPUT_DIR = Path("data/reddit/analysis/step19_hypothesis_tests")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "analysis" / "step19_hypothesis_tests"
 
 REQUIRED_BASE_COLUMNS = [
     "id",
@@ -72,15 +62,6 @@ def normal_cdf(x):
 def two_proportion_z_test(success_a, total_a, success_b, total_b):
     """
     Two-sided two-proportion z-test for proportions.
-
-    Returns a dictionary with:
-    - rate_a
-    - rate_b
-    - diff_a_minus_b
-    - z_stat
-    - p_value_two_sided
-
-    If the test cannot be computed, values are set to pd.NA.
     """
     if total_a <= 0 or total_b <= 0:
         return {
@@ -275,10 +256,7 @@ def main():
     report_lines.append(f"Minimum user posts for H3: {min_user_posts}")
     report_lines.append("")
 
-    # ==============================================================
     # H1
-    # Recruiting sentiment becomes more negative post-COVID vs pre-COVID
-    # ==============================================================
     print("Testing H1...")
     recruiting_col = "topic_recruiting_pipeline"
 
@@ -305,20 +283,16 @@ def main():
     post_positive = int((post_df["predicted_label"] == 1).sum())
 
     h1_pos_test = two_proportion_z_test(
-        success_a=post_positive,
-        total_a=post_total,
-        success_b=pre_positive,
-        total_b=pre_total,
+        success_a=post_positive, total_a=post_total,
+        success_b=pre_positive, total_b=pre_total,
     )
 
     pre_negative = int((pre_df["predicted_label"] == 0).sum())
     post_negative = int((post_df["predicted_label"] == 0).sum())
 
     h1_neg_test = two_proportion_z_test(
-        success_a=post_negative,
-        total_a=post_total,
-        success_b=pre_negative,
-        total_b=pre_total,
+        success_a=post_negative, total_a=post_total,
+        success_b=pre_negative, total_b=pre_total,
     )
 
     h1_test_df = pd.DataFrame([{
@@ -352,14 +326,10 @@ def main():
     report_lines.append(h1_test_df.to_string(index=False))
     report_lines.append("")
 
-    # ==============================================================
     # H2
-    # Layoffs/hiring freeze posts increase after 2022 and have lower sentiment
-    # ==============================================================
     print("Testing H2...")
     layoffs_col = "topic_layoffs_market"
 
-    # H2A: frequency by time period
     h2_frequency_rows = []
     for period_name in TIME_PERIOD_ORDER:
         period_df = df[df["time_period"] == period_name].copy()
@@ -375,20 +345,15 @@ def main():
 
     h2_frequency_by_period_df = pd.DataFrame(h2_frequency_rows)
 
-    pre_period_df = df[df["time_period"] == "pre-COVID"].copy()
-    covid_period_df = df[df["time_period"] == "COVID"].copy()
     post_period_df = df[df["time_period"] == "post-COVID"].copy()
-
     earlier_df = df[df["time_period"].isin(["pre-COVID", "COVID"])].copy()
 
     post_layoffs = int(post_period_df[layoffs_col].sum())
     earlier_layoffs = int(earlier_df[layoffs_col].sum())
 
     h2_frequency_test = two_proportion_z_test(
-        success_a=post_layoffs,
-        total_a=len(post_period_df),
-        success_b=earlier_layoffs,
-        total_b=len(earlier_df),
+        success_a=post_layoffs, total_a=len(post_period_df),
+        success_b=earlier_layoffs, total_b=len(earlier_df),
     )
 
     h2_frequency_test_df = pd.DataFrame([{
@@ -410,7 +375,6 @@ def main():
         ),
     }])
 
-    # H2B: layoffs topic has lower sentiment than non-layoffs
     layoffs_posts_df = df[df[layoffs_col] == 1].copy()
     non_layoffs_posts_df = df[df[layoffs_col] == 0].copy()
 
@@ -418,10 +382,8 @@ def main():
     non_layoffs_positive = int((non_layoffs_posts_df["predicted_label"] == 1).sum())
 
     h2_sentiment_test_overall = two_proportion_z_test(
-        success_a=layoffs_positive,
-        total_a=len(layoffs_posts_df),
-        success_b=non_layoffs_positive,
-        total_b=len(non_layoffs_posts_df),
+        success_a=layoffs_positive, total_a=len(layoffs_posts_df),
+        success_b=non_layoffs_positive, total_b=len(non_layoffs_posts_df),
     )
 
     post_layoffs_posts_df = post_period_df[post_period_df[layoffs_col] == 1].copy()
@@ -431,10 +393,8 @@ def main():
     post_non_layoffs_positive = int((post_non_layoffs_posts_df["predicted_label"] == 1).sum())
 
     h2_sentiment_test_post_only = two_proportion_z_test(
-        success_a=post_layoffs_positive,
-        total_a=len(post_layoffs_posts_df),
-        success_b=post_non_layoffs_positive,
-        total_b=len(post_non_layoffs_posts_df),
+        success_a=post_layoffs_positive, total_a=len(post_layoffs_posts_df),
+        success_b=post_non_layoffs_positive, total_b=len(post_non_layoffs_posts_df),
     )
 
     h2_sentiment_tests_df = pd.DataFrame([
@@ -478,10 +438,7 @@ def main():
     report_lines.append(h2_sentiment_tests_df.to_string(index=False))
     report_lines.append("")
 
-    # ==============================================================
     # H3
-    # User-level sentiment differs by topic, producing cross-topic correlations
-    # ==============================================================
     print("Testing H3...")
     user_df = df[df["author_norm"] != ""].copy()
 
@@ -525,13 +482,8 @@ def main():
         h3_user_topic_long_df = pd.concat(h3_long_rows, ignore_index=True)
     else:
         h3_user_topic_long_df = pd.DataFrame(columns=[
-            "author_norm",
-            "posts_in_topic",
-            "avg_predicted_label",
-            "avg_prob_positive",
-            "avg_prob_negative",
-            "topic_bucket",
-            "topic_description",
+            "author_norm", "posts_in_topic", "avg_predicted_label",
+            "avg_prob_positive", "avg_prob_negative", "topic_bucket", "topic_description",
         ])
 
     h3_topic_user_coverage_df = (
@@ -544,30 +496,22 @@ def main():
                              .reset_index()
         if len(h3_user_topic_long_df) > 0
         else pd.DataFrame(columns=[
-            "topic_bucket",
-            "users_with_topic",
-            "total_topic_posts_from_eligible_users",
-            "mean_user_topic_sentiment",
+            "topic_bucket", "users_with_topic",
+            "total_topic_posts_from_eligible_users", "mean_user_topic_sentiment",
         ])
     )
 
     if len(h3_user_topic_long_df) > 0:
         h3_user_topic_wide_df = (
             h3_user_topic_long_df.pivot(
-                index="author_norm",
-                columns="topic_bucket",
-                values="avg_predicted_label"
-            )
-            .reset_index()
+                index="author_norm", columns="topic_bucket", values="avg_predicted_label"
+            ).reset_index()
         )
 
         h3_corr_df = (
             h3_user_topic_long_df.pivot(
-                index="author_norm",
-                columns="topic_bucket",
-                values="avg_predicted_label"
-            )
-            .corr(method="pearson", min_periods=2)
+                index="author_norm", columns="topic_bucket", values="avg_predicted_label"
+            ).corr(method="pearson", min_periods=2)
         )
     else:
         h3_user_topic_wide_df = pd.DataFrame()
@@ -575,18 +519,13 @@ def main():
 
     if not h3_corr_df.empty:
         corr_long = h3_corr_df.copy()
-
-        # Give the index and columns different names so they do not collide
         corr_long.index.name = "topic_a"
         corr_long.columns.name = "topic_b"
 
-        # Convert matrix to long format without stack/reset_index collision
         corr_long = (
             corr_long.reset_index()
                     .melt(id_vars="topic_a", var_name="topic_b", value_name="correlation")
         )
-
-        # Remove self-correlations like recruiting_pipeline vs recruiting_pipeline
         corr_long = corr_long[corr_long["topic_a"] != corr_long["topic_b"]].copy()
 
         if len(corr_long) > 0:
@@ -620,10 +559,7 @@ def main():
     report_lines.append(h3_summary_df.to_string(index=False))
     report_lines.append("")
 
-    # ==============================================================
     # H4
-    # AI discussion increases are associated with overall sentiment shifts over time
-    # ==============================================================
     print("Testing H4...")
     ai_col = "topic_ai_llm"
 
@@ -662,12 +598,10 @@ def main():
 
     if len(h4_monthly_df) >= 2:
         ai_positive_corr = h4_monthly_df["ai_share_of_all_posts"].corr(
-            h4_monthly_df["overall_positive_rate"],
-            method="pearson",
+            h4_monthly_df["overall_positive_rate"], method="pearson",
         )
         ai_negative_corr = h4_monthly_df["ai_share_of_all_posts"].corr(
-            h4_monthly_df["overall_negative_rate"],
-            method="pearson",
+            h4_monthly_df["overall_negative_rate"], method="pearson",
         )
     else:
         ai_positive_corr = pd.NA
@@ -690,42 +624,33 @@ def main():
     report_lines.append(h4_corr_df.to_string(index=False))
     report_lines.append("")
 
-    # ==============================================================
     # Save outputs
-    # ==============================================================
     print("Saving Step 19 output files...")
 
     h1_period_output = output_dir / "h1_recruiting_pre_vs_post_period_summary.csv"
     h1_test_output = output_dir / "h1_recruiting_pre_vs_post_test.csv"
-
     h2_freq_period_output = output_dir / "h2_layoffs_frequency_by_period.csv"
     h2_freq_test_output = output_dir / "h2_layoffs_frequency_tests.csv"
     h2_sentiment_output = output_dir / "h2_layoffs_sentiment_tests.csv"
-
     h3_long_output = output_dir / "h3_user_topic_sentiment_long.csv"
     h3_wide_output = output_dir / "h3_user_topic_sentiment_wide.csv"
     h3_corr_output = output_dir / "h3_user_topic_correlation_matrix.csv"
     h3_coverage_output = output_dir / "h3_topic_user_coverage.csv"
     h3_summary_output = output_dir / "h3_summary.csv"
-
     h4_monthly_output = output_dir / "h4_monthly_ai_sentiment_trends.csv"
     h4_corr_output = output_dir / "h4_ai_sentiment_correlation.csv"
-
     report_output = output_dir / "hypothesis_test_report.txt"
 
     h1_period_summary_df.to_csv(h1_period_output, index=False, encoding="utf-8")
     h1_test_df.to_csv(h1_test_output, index=False, encoding="utf-8")
-
     h2_frequency_by_period_df.to_csv(h2_freq_period_output, index=False, encoding="utf-8")
     h2_frequency_test_df.to_csv(h2_freq_test_output, index=False, encoding="utf-8")
     h2_sentiment_tests_df.to_csv(h2_sentiment_output, index=False, encoding="utf-8")
-
     h3_user_topic_long_df.to_csv(h3_long_output, index=False, encoding="utf-8")
     h3_user_topic_wide_df.to_csv(h3_wide_output, index=False, encoding="utf-8")
     h3_corr_df.to_csv(h3_corr_output, encoding="utf-8")
     h3_topic_user_coverage_df.to_csv(h3_coverage_output, index=False, encoding="utf-8")
     h3_summary_df.to_csv(h3_summary_output, index=False, encoding="utf-8")
-
     h4_monthly_df.to_csv(h4_monthly_output, index=False, encoding="utf-8")
     h4_corr_df.to_csv(h4_corr_output, index=False, encoding="utf-8")
 
@@ -755,26 +680,12 @@ def main():
 
     print("Final summary")
     print("-" * 70)
-    print(f"Saved: {h1_period_output}")
-    print(f"Saved: {h1_test_output}")
-    print(f"Saved: {h2_freq_period_output}")
-    print(f"Saved: {h2_freq_test_output}")
-    print(f"Saved: {h2_sentiment_output}")
-    print(f"Saved: {h3_long_output}")
-    print(f"Saved: {h3_wide_output}")
-    print(f"Saved: {h3_corr_output}")
-    print(f"Saved: {h3_coverage_output}")
-    print(f"Saved: {h3_summary_output}")
-    print(f"Saved: {h4_monthly_output}")
-    print(f"Saved: {h4_corr_output}")
-    print(f"Saved: {report_output}")
+    for p in [h1_period_output, h1_test_output, h2_freq_period_output,
+              h2_freq_test_output, h2_sentiment_output, h3_long_output,
+              h3_wide_output, h3_corr_output, h3_coverage_output,
+              h3_summary_output, h4_monthly_output, h4_corr_output, report_output]:
+        print(f"Saved: {p}")
     print()
-    print("Step 19 is complete when:")
-    print("1. the script finishes without errors")
-    print("2. these hypothesis output files are created")
-    print("3. each hypothesis has a saved summary/test file")
-    print("4. the text report is created")
-    print("5. on the full dataset, H1-H4 can be interpreted from these outputs")
     print("=" * 70)
 
 

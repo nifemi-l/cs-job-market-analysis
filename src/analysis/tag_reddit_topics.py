@@ -4,25 +4,8 @@ tag_reddit_topics.py
 Step 16 of the project:
 Label or tag Reddit posts into the topic buckets using keyword-based rules.
 
-What this script does:
-1. Reads the Step 14 time-grouped Reddit CSV
-2. Imports the Step 15 topic bucket definitions
-3. Uses keyword-based matching on cleaned_text
-4. Adds one binary column per topic bucket
-5. Adds matched-keyword columns per topic bucket
-6. Adds summary columns:
-   - topic_list
-   - num_topics
-   - has_any_topic
-7. Saves a new CSV for later analysis
-
-Run from src/:
-    python .\tag_reddit_topics.py
-
-Optional:
-    python .\tag_reddit_topics.py ^
-        --input .\data\reddit\analysis\RS_2023-02_time_grouped.csv ^
-        --output .\data\reddit\analysis\RS_2023-02_topic_tagged.csv
+Run:
+    python src/analysis/tag_reddit_topics.py
 """
 
 import argparse
@@ -30,14 +13,16 @@ import re
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
+
 import pandas as pd
 
-from preprocessing import clean_text
-from topic_buckets import get_topic_buckets
+from utils.preprocessing import clean_text
+from utils.topic_buckets import get_topic_buckets
 
-
-DEFAULT_INPUT = Path("data/reddit/analysis/RS_2023-02_time_grouped.csv")
-DEFAULT_OUTPUT = Path("data/reddit/analysis/RS_2023-02_topic_tagged.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_time_grouped.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
 
 REQUIRED_COLUMNS = [
     "id",
@@ -68,9 +53,6 @@ def normalize_text(value) -> str:
 def build_keyword_pattern(cleaned_keyword: str):
     """
     Build a regex that matches a cleaned keyword or phrase as a whole token/phrase.
-    Example:
-      'laid off' -> r'(?<![a-z])laid\\s+off(?![a-z])'
-      'ai'       -> r'(?<![a-z])ai(?![a-z])'
     """
     if not cleaned_keyword:
         return None
@@ -88,14 +70,6 @@ def build_keyword_pattern(cleaned_keyword: str):
 def prepare_topic_patterns(topic_buckets):
     """
     Convert raw keyword lists into cleaned keywords + compiled regex patterns.
-    Returns:
-      {
-        bucket_name: [
-          {"raw_keyword": "...", "cleaned_keyword": "...", "pattern": compiled_regex},
-          ...
-        ],
-        ...
-      }
     """
     prepared = {}
 
@@ -134,7 +108,6 @@ def find_matches_in_text(text: str, bucket_keyword_info):
         if item["pattern"].search(text):
             matches.append(item["raw_keyword"])
 
-    # remove duplicates while preserving sorted readability
     return sorted(set(matches), key=str.lower)
 
 
@@ -211,7 +184,6 @@ def main():
     topic_binary_columns = []
     matched_keyword_columns = []
 
-    # Initialize columns first
     for bucket_name in topic_buckets.keys():
         topic_col = f"topic_{bucket_name}"
         match_col = f"matched_keywords_{bucket_name}"
@@ -221,7 +193,6 @@ def main():
         df[topic_col] = 0
         df[match_col] = ""
 
-    # Per-row tagging
     for idx, text in enumerate(df["cleaned_text"]):
         if idx > 0 and idx % 5000 == 0:
             print(f"  Progress: tagged {idx:,} rows")

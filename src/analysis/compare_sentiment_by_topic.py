@@ -5,43 +5,23 @@ Step 17 of the project:
 Compare sentiment across different topics to see which themes are associated
 with more negative or more positive sentiment.
 
-What this script does:
-1. Reads the Step 16 topic-tagged Reddit CSV
-2. Uses the Step 15 topic bucket definitions
-3. For each topic bucket, computes:
-   - number of posts
-   - number of positive posts
-   - number of negative posts
-   - positive rate
-   - negative rate
-   - average predicted label
-   - average positive probability
-   - average negative probability
-   - difference from the overall positive rate
-4. Saves summary CSV files
-5. Prints ranked summaries so we can quickly see which topics are more positive
-   or more negative
-
-Run from src/:
-    python .\compare_sentiment_by_topic.py
-
-Optional:
-    python .\compare_sentiment_by_topic.py ^
-        --input .\data\reddit\analysis\RS_2023-02_topic_tagged.csv ^
-        --output_dir .\data\reddit\analysis\step17_topic_sentiment
+Run:
+    python src/analysis/compare_sentiment_by_topic.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(SRC_DIR))
+
 import pandas as pd
 
-from topic_buckets import get_topic_buckets
+from utils.topic_buckets import get_topic_buckets
 
-
-DEFAULT_INPUT = Path("data/reddit/analysis/RS_2023-02_topic_tagged.csv")
-DEFAULT_OUTPUT_DIR = Path("data/reddit/analysis/step17_topic_sentiment")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "analysis" / "step17_topic_sentiment"
 
 REQUIRED_BASE_COLUMNS = [
     "id",

@@ -5,39 +5,23 @@ Steps 11 and 12 of the project:
 - Step 11: Load the saved TF-IDF vectorizer and the selected trained sentiment model
 - Step 12: Run sentiment prediction on the Reddit posts
 
-Input:
-- Step 10 CSV with cleaned_text
-
-Model files:
-- models/tfidf_vectorizer.joblib
-- models/logistic_regression.joblib
-
-Output:
-- A new CSV with predicted sentiment labels
-
-Run from src/:
-    python .\predict_reddit_sentiment.py
-
-Optional:
-    python .\predict_reddit_sentiment.py ^
-        --input .\data\reddit\processed\RS_2023-02_cleaned_text.csv ^
-        --vectorizer .\models\tfidf_vectorizer.joblib ^
-        --model .\models\logistic_regression.joblib ^
-        --output .\data\reddit\predictions\RS_2023-02_sentiment_predictions.csv
+Run:
+    python src/pipeline/predict_reddit_sentiment.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+
 import joblib
 import pandas as pd
 
-
-DEFAULT_INPUT = Path("data/reddit/processed/RS_2023-02_cleaned_text.csv")
-DEFAULT_VECTORIZER = Path("models/tfidf_vectorizer.joblib")
-DEFAULT_MODEL = Path("models/logistic_regression.joblib")
-DEFAULT_OUTPUT = Path("data/reddit/predictions/RS_2023-02_sentiment_predictions.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_cleaned_text.csv"
+DEFAULT_VECTORIZER = SRC_DIR / "models" / "tfidf_vectorizer.joblib"
+DEFAULT_MODEL = SRC_DIR / "models" / "logistic_regression.joblib"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "predictions" / "RS_2023-02_sentiment_predictions.csv"
 
 REQUIRED_COLUMNS = [
     "id",
@@ -95,9 +79,6 @@ def main():
     print(f"Output file:     {output_path}")
     print()
 
-    # ------------------------------------------------------------------
-    # Step 11: load the saved TF-IDF vectorizer and trained sentiment model
-    # ------------------------------------------------------------------
     print("Checking required files...")
     if not input_path.exists():
         print(f"ERROR: Input file does not exist: {input_path}")
@@ -158,9 +139,6 @@ def main():
     print(f"Model loaded: {type(model).__name__}")
     print()
 
-    # ------------------------------------------------------------------
-    # Step 12: transform Reddit text and predict sentiment
-    # ------------------------------------------------------------------
     print("Transforming cleaned_text into TF-IDF features...")
     X_reddit = vectorizer.transform(df["cleaned_text"])
     print(f"TF-IDF matrix shape: {X_reddit.shape}")

@@ -4,36 +4,22 @@ select_reddit_fields.py
 Step 8 of the project:
 Keep only the important fields from each Reddit post.
 
-Input:
-- Step 7 filtered Reddit CSV
+Fields kept: id, subreddit, author, created_utc, title, body
 
-Output:
-- A smaller CSV containing only the fields needed for later steps
-
-Fields kept:
-- id
-- subreddit
-- author
-- created_utc
-- title
-- body
-
-Run from src/:
-    python .\select_reddit_fields.py
-
-Optional:
-    python .\select_reddit_fields.py --input .\data\reddit\filtered\RS_2023-02_filtered.csv --output .\data\reddit\processed\RS_2023-02_selected_fields.csv
+Run:
+    python src/pipeline/select_reddit_fields.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+
 import pandas as pd
 
-
-DEFAULT_INPUT = Path("data/reddit/filtered/RS_2023-02_filtered.csv")
-DEFAULT_OUTPUT = Path("data/reddit/processed/RS_2023-02_selected_fields.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "filtered" / "RS_2023-02_filtered.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_selected_fields.csv"
 
 KEEP_COLUMNS = [
     "id",

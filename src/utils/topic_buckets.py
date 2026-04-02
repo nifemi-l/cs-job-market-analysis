@@ -9,25 +9,22 @@ What this file does:
 2. Provides helper functions that Step 16 can import later
 3. Can be run directly to print and save the bucket definitions
 
-Run from src/:
-    python .\topic_buckets.py
+Run from project root or src/:
+    python src/utils/topic_buckets.py
 
 Optional:
-    python .\topic_buckets.py --output .\data\reddit\analysis\topic_buckets_definition.json
+    python src/utils/topic_buckets.py --output ./data/reddit/analysis/topic_buckets_definition.json
 """
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
 
-DEFAULT_OUTPUT = Path("data/reddit/analysis/topic_buckets_definition.json")
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "analysis" / "topic_buckets_definition.json"
 
-# ---------------------------------------------------------------------
-# STEP 15: TOPIC BUCKET DEFINITIONS
-# These are based on the project proposal, with a few practical variants
-# added so Step 16 can match real Reddit wording more reliably.
-# ---------------------------------------------------------------------
 TOPIC_BUCKETS = {
     "layoffs_market": {
         "description": "Layoffs, market contraction, hiring freezes, severance, and related market stress.",

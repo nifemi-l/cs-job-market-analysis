@@ -4,34 +4,26 @@ build_reddit_final_text.py
 Step 9 of the project:
 Create one final text field for analysis by combining title and body when appropriate.
 
-Input:
-- Step 8 selected-fields Reddit CSV
-
-Output:
-- A new CSV that includes a final_text column
-
 Rules:
 - If both title and body exist, final_text = title + " " + body
 - If only title exists, final_text = title
 - If only body exists, final_text = body
 - If both are empty, drop the row
 
-Run from src/:
-    python .\build_reddit_final_text.py
-
-Optional:
-    python .\build_reddit_final_text.py --input .\data\reddit\processed\RS_2023-02_selected_fields.csv --output .\data\reddit\processed\RS_2023-02_final_text.csv
+Run:
+    python src/pipeline/build_reddit_final_text.py
 """
 
 import argparse
 import sys
 from pathlib import Path
 
+SRC_DIR = Path(__file__).resolve().parent.parent
+
 import pandas as pd
 
-
-DEFAULT_INPUT = Path("data/reddit/processed/RS_2023-02_selected_fields.csv")
-DEFAULT_OUTPUT = Path("data/reddit/processed/RS_2023-02_final_text.csv")
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_selected_fields.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_final_text.csv"
 
 REQUIRED_COLUMNS = [
     "id",
@@ -42,7 +34,6 @@ REQUIRED_COLUMNS = [
     "body",
 ]
 
-# Common placeholder strings that should not count as real text
 PLACEHOLDER_VALUES = {
     "",
     "[deleted]",
