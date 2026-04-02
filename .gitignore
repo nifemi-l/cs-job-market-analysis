@@ -8,3 +8,4 @@ src/models/*.joblib
 
 src/data/
 src/models/*.joblib
+artifacts/
