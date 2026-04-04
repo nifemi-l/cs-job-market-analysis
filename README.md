@@ -162,46 +162,33 @@ src/
 ### Major script purposes
 
 - `utils/preprocessing.py`
-  Shared text cleaning utilities used during training and Reddit preprocessing.
-
+Shared text cleaning utilities used during training and Reddit preprocessing.
 - `utils/topic_buckets.py`
-  Defines the topic buckets and keyword lists for thematic tagging.
-
+Defines the topic buckets and keyword lists for thematic tagging.
 - `training/train_sentiment.py`
-  Trains sentiment models on Sentiment140, compares Logistic Regression and Naive Bayes, and saves the model artifacts.
-
+Trains sentiment models on Sentiment140, compares Logistic Regression and Naive Bayes, and saves the model artifacts.
 - `pipeline/filter_reddit_submissions.py`
-  Reads the raw Reddit dump and filters it down to the target subreddits.
-
+Reads the raw Reddit dump and filters it down to the target subreddits.
 - `pipeline/select_reddit_fields.py`
-  Keeps only the Reddit fields needed for the rest of the project.
-
+Keeps only the Reddit fields needed for the rest of the project.
 - `pipeline/build_reddit_final_text.py`
-  Builds one final text field per post by combining title and body according to the project rules.
-
+Builds one final text field per post by combining title and body according to the project rules.
 - `pipeline/preprocess_reddit_text.py`
-  Applies the same core text cleaning used in training to the Reddit posts.
-
+Applies the same core text cleaning used in training to the Reddit posts.
 - `pipeline/predict_reddit_sentiment.py`
-  Loads the trained vectorizer and sentiment model, then predicts sentiment for each cleaned Reddit post.
-
+Loads the trained vectorizer and sentiment model, then predicts sentiment for each cleaned Reddit post.
 - `analysis/group_reddit_by_time.py`
-  Converts timestamps and assigns each post to year, month, year-month, and study period.
-
+Converts timestamps and assigns each post to year, month, year-month, and study period.
 - `analysis/tag_reddit_topics.py`
-  Tags each Reddit post into one or more topic buckets based on keyword rules.
-
+Tags each Reddit post into one or more topic buckets based on keyword rules.
 - `analysis/compare_sentiment_by_topic.py`
-  Compares positive versus negative sentiment across topic categories.
-
+Compares positive versus negative sentiment across topic categories.
 - `analysis/measure_topic_trends_over_time.py`
-  Measures how often each topic appears over time.
-
+Measures how often each topic appears over time.
 - `reporting/test_project_hypotheses.py`
-  Runs the hypothesis tests for H1 through H4.
-
+Runs the hypothesis tests for H1 through H4.
 - `reporting/create_final_report_outputs.py`
-  Produces final tables, plots, and written summaries for the report and presentation.
+Produces final tables, plots, and written summaries for the report and presentation.
 
 ---
 
@@ -288,7 +275,6 @@ Choose the model that will be used later for Reddit sentiment prediction.
 - **Logistic Regression**
   - accuracy: approximately **0.7983**
   - F1 score: approximately **0.8010**
-
 - **Naive Bayes**
   - accuracy: approximately **0.7767**
   - F1 score: approximately **0.7745**

@@ -26,6 +26,7 @@ import io
 import json
 import sys
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
 import zstandard as zstd
@@ -38,6 +39,9 @@ TARGET_SUBREDDITS = {
     "recruitinghell",
     "jobs",
 }
+
+YEAR_MIN = 2017
+YEAR_MAX = 2025
 
 DEFAULT_INPUT_CANDIDATES = [
     SRC_DIR / "data" / "reddit" / "RS_2023-02.zst",
@@ -53,6 +57,16 @@ def normalize_text(value):
     if value is None:
         return ""
     return str(value).strip()
+
+
+def timestamp_in_range(created_utc, year_min, year_max):
+    """Return True if created_utc falls within [year_min, year_max]."""
+    try:
+        ts = int(float(created_utc))
+    except (ValueError, TypeError):
+        return False
+    dt = datetime.fromtimestamp(ts, tz=timezone.utc)
+    return year_min <= dt.year <= year_max
 
 
 def detect_source_type(record):
@@ -134,13 +148,14 @@ def find_default_input():
     return None
 
 
-def filter_reddit_file(input_path, output_path):
+def filter_reddit_file(input_path, output_path, year_min=YEAR_MIN, year_max=YEAR_MAX):
     print("=" * 70)
     print("STEP 7: FILTER REDDIT DATA TO PROJECT SUBREDDITS")
     print("=" * 70)
     print(f"Input file:  {input_path}")
     print(f"Output file: {output_path}")
     print(f"Target subreddits: {sorted(TARGET_SUBREDDITS)}")
+    print(f"Year range: {year_min}–{year_max}")
     print()
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -150,6 +165,7 @@ def filter_reddit_file(input_path, output_path):
     kept_records = 0
     json_errors = 0
     missing_subreddit = 0
+    out_of_range = 0
     kept_by_subreddit = Counter()
     source_type_counts = Counter()
 
@@ -210,6 +226,10 @@ def filter_reddit_file(input_path, output_path):
                 if subreddit not in TARGET_SUBREDDITS:
                     continue
 
+                if not timestamp_in_range(record.get("created_utc", ""), year_min, year_max):
+                    out_of_range += 1
+                    continue
+
                 standardized = standardize_record(record)
                 writer.writerow(standardized)
 
@@ -224,6 +244,7 @@ def filter_reddit_file(input_path, output_path):
         print(f"JSON records parsed:      {parsed_records:,}")
         print(f"JSON parse errors:        {json_errors:,}")
         print(f"Missing subreddit field:  {missing_subreddit:,}")
+        print(f"Outside {year_min}–{year_max}:       {out_of_range:,}")
         print(f"Records kept:             {kept_records:,}")
         print()
 
@@ -276,6 +297,18 @@ def main():
         default=None,
         help="Path to output CSV file. If omitted, a default path is generated.",
     )
+    parser.add_argument(
+        "--year-min",
+        type=int,
+        default=YEAR_MIN,
+        help=f"Earliest year to keep (default {YEAR_MIN}).",
+    )
+    parser.add_argument(
+        "--year-max",
+        type=int,
+        default=YEAR_MAX,
+        help=f"Latest year to keep (default {YEAR_MAX}).",
+    )
     args = parser.parse_args()
 
     if args.input is not None:
@@ -300,7 +333,7 @@ def main():
         safe_name = input_path.stem.replace(".", "_")
         output_path = DEFAULT_OUTPUT_DIR / f"{safe_name}_filtered.csv"
 
-    filter_reddit_file(input_path, output_path)
+    filter_reddit_file(input_path, output_path, year_min=args.year_min, year_max=args.year_max)
 
 
 if __name__ == "__main__":
