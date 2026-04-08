@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 from utils.topic_buckets import get_topic_buckets
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "all_subreddits_topic_tagged.csv"
 DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "final_outputs"
 
 REQUIRED_COLUMNS = [
@@ -49,6 +49,25 @@ def sort_year_month_strings(values):
         return []
     periods = pd.PeriodIndex(cleaned, freq="M")
     return [str(p) for p in periods.sort_values()]
+
+
+def apply_sparse_month_ticks(ax, labels, max_ticks=12):
+    """
+    Set a limited number of month tick labels.
+    """
+    clean_labels = [str(v) for v in labels]
+    n = len(clean_labels)
+    if n == 0:
+        return
+    if n <= max_ticks:
+        positions = list(range(n))
+    else:
+        step = max(1, n // (max_ticks - 1))
+        positions = list(range(0, n, step))
+        if positions[-1] != n - 1:
+            positions.append(n - 1)
+    ax.set_xticks(positions)
+    ax.set_xticklabels([clean_labels[i] for i in positions], rotation=45, ha="right")
 
 
 def ensure_columns(df, columns):
@@ -366,12 +385,13 @@ def save_plot_monthly_sentiment(monthly_df, output_path):
     plot_df = monthly_df.copy()
     if len(plot_df) == 0:
         return False
-    plt.figure(figsize=(10, 5))
-    plt.plot(plot_df["year_month"], plot_df["positive_rate"], marker="o")
-    plt.title("Monthly Positive Sentiment Rate")
-    plt.xlabel("Month")
-    plt.ylabel("Positive Rate")
-    plt.xticks(rotation=45, ha="right")
+    fig, ax = plt.subplots(figsize=(11, 5))
+    x_positions = list(range(len(plot_df)))
+    ax.plot(x_positions, plot_df["positive_rate"], marker="o")
+    ax.set_title("Monthly Positive Sentiment Rate")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Positive Rate")
+    apply_sparse_month_ticks(ax, plot_df["year_month"].tolist(), max_ticks=12)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.close()
@@ -388,14 +408,15 @@ def save_plot_monthly_topic_trends(topic_monthly_df, output_path):
     )
     if pivot_df.empty:
         return False
-    plt.figure(figsize=(11, 6))
+    fig, ax = plt.subplots(figsize=(12, 6))
+    x_positions = list(range(len(pivot_df.index)))
     for col in pivot_df.columns:
-        plt.plot(pivot_df.index, pivot_df[col], marker="o", label=col)
-    plt.title("Topic Frequency Over Time")
-    plt.xlabel("Month")
-    plt.ylabel("Topic Post Count")
-    plt.xticks(rotation=45, ha="right")
-    plt.legend()
+        ax.plot(x_positions, pivot_df[col], marker="o", label=col)
+    ax.set_title("Topic Frequency Over Time")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Topic Post Count")
+    apply_sparse_month_ticks(ax, pivot_df.index.tolist(), max_ticks=12)
+    ax.legend()
     plt.tight_layout()
     plt.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.close()

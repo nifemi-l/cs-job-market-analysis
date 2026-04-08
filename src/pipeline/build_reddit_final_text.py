@@ -22,8 +22,8 @@ SRC_DIR = Path(__file__).resolve().parent.parent
 
 import pandas as pd
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_selected_fields.csv"
-DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_final_text.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "all_subreddits_selected_fields.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "all_subreddits_final_text.csv"
 
 REQUIRED_COLUMNS = [
     "id",

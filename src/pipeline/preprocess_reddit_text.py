@@ -19,8 +19,8 @@ import pandas as pd
 
 from utils.preprocessing import clean_text
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_final_text.csv"
-DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_cleaned_text.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "all_subreddits_final_text.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "processed" / "all_subreddits_cleaned_text.csv"
 
 REQUIRED_COLUMNS = [
     "id",

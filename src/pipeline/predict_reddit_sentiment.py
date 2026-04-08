@@ -18,10 +18,10 @@ SRC_DIR = Path(__file__).resolve().parent.parent
 import joblib
 import pandas as pd
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "RS_2023-02_cleaned_text.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "processed" / "all_subreddits_cleaned_text.csv"
 DEFAULT_VECTORIZER = SRC_DIR / "models" / "tfidf_vectorizer.joblib"
 DEFAULT_MODEL = SRC_DIR / "models" / "logistic_regression.joblib"
-DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "predictions" / "RS_2023-02_sentiment_predictions.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "predictions" / "all_subreddits_sentiment_predictions.csv"
 
 REQUIRED_COLUMNS = [
     "id",

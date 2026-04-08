@@ -19,7 +19,7 @@ import pandas as pd
 
 from utils.topic_buckets import get_topic_buckets
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "all_subreddits_topic_tagged.csv"
 DEFAULT_OUTPUT_DIR = SRC_DIR / "data" / "reddit" / "analysis" / "step18_topic_trends"
 
 REQUIRED_BASE_COLUMNS = [

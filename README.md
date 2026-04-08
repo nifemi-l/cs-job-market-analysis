@@ -27,6 +27,64 @@ Install dependencies first:
 pip install -r requirements.txt
 ```
 
+### DigitalOcean Spaces `.env` (project root)
+
+Create a `.env` file in the project root:
+
+```text
+EECS-767-Project/.env
+```
+
+Add:
+
+```text
+DO_SPACES_KEY=your-access-key-id
+DO_SPACES_SECRET=your-secret-access-key
+DO_SPACES_REGION=sfo3
+DO_SPACES_BUCKET=eecs767-reddit
+```
+
+Security note:
+- `.env` contains credentials and must never be committed or pushed to GitHub.
+- This repo already ignores `.env` (`.env` and `**/.env` are in `.gitignore`).
+- Before any commit, verify `.env` is not staged:
+
+```bash
+git status
+```
+
+### DigitalOcean Spaces scripts
+
+These scripts use the root `.env` file above:
+- `src/pipeline/upload_to_spaces.py`
+- `src/pipeline/download_from_spaces.py`
+
+Upload examples:
+
+```bash
+# Upload all pipeline outputs
+python src/pipeline/upload_to_spaces.py
+
+# Upload one file
+python src/pipeline/upload_to_spaces.py --files src/data/reddit/filtered/all_subreddits_filtered.csv
+
+# Custom prefix inside the bucket
+python src/pipeline/upload_to_spaces.py --prefix pipeline-outputs
+```
+
+Download examples:
+
+```bash
+# Download everything under the prefix to src/data/reddit
+python src/pipeline/download_from_spaces.py
+
+# Custom prefix and local output directory
+python src/pipeline/download_from_spaces.py --prefix pipeline-outputs --output-dir src/data/reddit
+
+# Re-download and overwrite local files
+python src/pipeline/download_from_spaces.py --overwrite
+```
+
 ---
 
 ## Sentiment140 dataset placement

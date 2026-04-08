@@ -21,8 +21,8 @@ import pandas as pd
 from utils.preprocessing import clean_text
 from utils.topic_buckets import get_topic_buckets
 
-DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_time_grouped.csv"
-DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "analysis" / "RS_2023-02_topic_tagged.csv"
+DEFAULT_INPUT = SRC_DIR / "data" / "reddit" / "analysis" / "all_subreddits_time_grouped.csv"
+DEFAULT_OUTPUT = SRC_DIR / "data" / "reddit" / "analysis" / "all_subreddits_topic_tagged.csv"
 
 REQUIRED_COLUMNS = [
     "id",
