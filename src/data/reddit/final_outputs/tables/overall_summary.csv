@@ -1,0 +1,2 @@
+total_posts,positive_posts,negative_posts,positive_rate,negative_rate,num_subreddits,num_months,num_time_periods,posts_with_any_topic,share_posts_with_any_topic,avg_prob_positive,avg_prob_negative
+1535813,741215,794598,0.4826206055034044,0.5173793944965956,4,108,3,807244,0.5256134698690531,0.4612965258902695,0.5387034741097305

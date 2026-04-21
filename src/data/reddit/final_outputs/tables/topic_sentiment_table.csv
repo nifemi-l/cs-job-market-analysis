@@ -1,0 +1,7 @@
+topic_bucket,topic_description,total_posts,positive_posts,negative_posts,positive_rate,negative_rate,share_of_all_posts,positive_rate_minus_overall,avg_prob_positive
+recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",645071,293509,351562,0.4550026276177351,0.5449973723822649,0.4200192341124864,-0.02761797788566933,0.4499409775681116
+compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",186757,56345,130412,0.3017022119652811,0.6982977880347189,0.12160139287790897,-0.18091839353812333,0.35077656980835636
+work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",70868,21954,48914,0.30978721002427045,0.6902127899757295,0.04614363858099912,-0.17283339547913396,0.35690423044258657
+companies,Specific companies frequently discussed in CS job-market conversations.,70498,41590,28908,0.5899458140656473,0.4100541859343527,0.0459027238342168,0.10732520856224287,0.5271125250589204
+layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",55092,12332,42760,0.22384375226893197,0.7761562477310681,0.035871554674950665,-0.2587768532344724,0.29673930860285114
+ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",47113,23423,23690,0.4971663871967398,0.5028336128032602,0.030676260716636726,0.014545781693335369,0.48105275202298564

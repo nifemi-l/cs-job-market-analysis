@@ -1,0 +1,5 @@
+hypothesis,question,status_with_current_data,current_result_note
+H1,Recruiting sentiment is more negative in post-COVID than pre-COVID.,ready_for_real_test,"pre-COVID recruiting posts=135876, post-COVID recruiting posts=379892"
+H2,Layoff-related posts increase after 2022 and have lower sentiment.,partially_testable,layoffs-topic posts in current dataset=55092
+H3,User-level sentiment differs by topic and produces cross-topic correlations.,partially_testable,eligible users with >=3 posts=89627
+H4,AI-topic prevalence over time is associated with overall sentiment shifts.,ready_for_real_test,distinct months in dataset=108

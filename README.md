@@ -53,6 +53,10 @@ Security note:
 git status
 ```
 
+Git data policy:
+- **Commit** presentation-ready artifacts under `src/data/reddit/final_outputs/` (plots, small tables, written summaries).
+- **Do not commit** raw dumps, large intermediates, or model weights: those paths are listed in `.gitignore` (see file for the exact list).
+
 ### DigitalOcean Spaces scripts
 
 These scripts use the root `.env` file above:
