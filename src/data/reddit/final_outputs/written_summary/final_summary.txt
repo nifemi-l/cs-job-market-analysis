@@ -147,6 +147,11 @@ Monthly trend overview
 - 2025-11: 16,892 posts, positive rate 46.70%, topic-tag share 57.35%
 - 2025-12: 14,982 posts, positive rate 45.70%, topic-tag share 58.54%
 
+How to read the topic trend figures
+- plot_monthly_topic_trends.png shows absolute monthly topic counts and overall magnitude.
+- plot_monthly_topic_trends_small_multiples.png separates topics so lower-volume trends are easier to track.
+- plot_monthly_topic_trends_indexed.png normalizes each topic to 100 at its first non-zero month to compare trend shape.
+
 Hypothesis-testing readiness
 - H1: ready_for_real_test (pre-COVID recruiting posts=135876, post-COVID recruiting posts=379892)
 - H2: partially_testable (layoffs-topic posts in current dataset=55092)

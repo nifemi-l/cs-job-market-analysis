@@ -28,6 +28,11 @@
 - **layoffs_market**: 55,092 posts, positive rate 22.38%, negative rate 77.62%
 - **ai_llm**: 47,113 posts, positive rate 49.72%, negative rate 50.28%
 
+## How to read the topic trend figures
+- `plot_monthly_topic_trends.png` shows absolute monthly topic counts and overall magnitude.
+- `plot_monthly_topic_trends_small_multiples.png` separates topics so lower-volume trends are easier to track.
+- `plot_monthly_topic_trends_indexed.png` normalizes each topic to 100 at its first non-zero month to compare trend shape.
+
 ## Hypothesis-testing readiness
 - **H1**: ready_for_real_test (pre-COVID recruiting posts=135876, post-COVID recruiting posts=379892)
 - **H2**: partially_testable (layoffs-topic posts in current dataset=55092)

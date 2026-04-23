@@ -62,10 +62,14 @@ def apply_sparse_month_ticks(ax, labels, max_ticks=12):
     if n <= max_ticks:
         positions = list(range(n))
     else:
-        step = max(1, n // (max_ticks - 1))
-        positions = list(range(0, n, step))
-        if positions[-1] != n - 1:
-            positions.append(n - 1)
+        if max_ticks <= 1:
+            positions = [0]
+        else:
+            positions = []
+            for i in range(max_ticks):
+                pos = round(i * (n - 1) / (max_ticks - 1))
+                if pos not in positions:
+                    positions.append(pos)
     ax.set_xticks(positions)
     ax.set_xticklabels([clean_labels[i] for i in positions], rotation=45, ha="right")
 
@@ -423,6 +427,116 @@ def save_plot_monthly_topic_trends(topic_monthly_df, output_path):
     return True
 
 
+def save_plot_monthly_topic_trends_small_multiples(topic_monthly_df, output_path):
+    """
+    Create one mini-chart per topic to avoid overlap in the combined trend plot.
+    """
+    plot_df = topic_monthly_df.copy()
+    if len(plot_df) == 0:
+        return False
+
+    pivot_df = (
+        plot_df.pivot(index="year_month", columns="topic_bucket", values="topic_posts_in_month")
+               .fillna(0)
+    )
+    if pivot_df.empty:
+        return False
+
+    combined_topic_order = pivot_df.columns.tolist()
+    default_colors = plt.rcParams["axes.prop_cycle"].by_key().get("color", [])
+    color_map = {}
+    for idx, topic in enumerate(combined_topic_order):
+        if len(default_colors) > 0:
+            color_map[topic] = default_colors[idx % len(default_colors)]
+        else:
+            color_map[topic] = f"C{idx}"
+
+    topic_order = pivot_df.sum(axis=0).sort_values(ascending=False).index.tolist()
+    pivot_df = pivot_df[topic_order]
+
+    num_topics = len(topic_order)
+    ncols = 2
+    nrows = (num_topics + ncols - 1) // ncols
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(14, 3.8 * nrows), sharex=True)
+
+    if hasattr(axes, "flatten"):
+        axes = axes.flatten()
+    else:
+        axes = [axes]
+
+    x_positions = list(range(len(pivot_df.index)))
+    for idx, topic in enumerate(topic_order):
+        ax = axes[idx]
+        ax.plot(
+            x_positions,
+            pivot_df[topic],
+            marker="o",
+            linewidth=1.8,
+            color=color_map.get(topic),
+        )
+        ax.set_title(str(topic))
+        ax.set_ylabel("Post Count")
+        row_num = idx // ncols
+        is_bottom_row = row_num == (nrows - 1)
+        if is_bottom_row:
+            apply_sparse_month_ticks(ax, pivot_df.index.tolist(), max_ticks=6)
+        else:
+            ax.set_xticks([])
+            ax.set_xlabel("")
+        ax.grid(alpha=0.25)
+
+    for idx in range(num_topics, len(axes)):
+        axes[idx].axis("off")
+
+    fig.suptitle("Topic Frequency Over Time (Small Multiples)", y=0.995)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200, bbox_inches="tight")
+    plt.close()
+    return True
+
+
+def save_plot_monthly_topic_trends_indexed(topic_monthly_df, output_path):
+    """
+    Compare trend shape by indexing each topic to its own baseline month (=100).
+    """
+    plot_df = topic_monthly_df.copy()
+    if len(plot_df) == 0:
+        return False
+
+    pivot_df = (
+        plot_df.pivot(index="year_month", columns="topic_bucket", values="topic_posts_in_month")
+               .fillna(0.0)
+    )
+    if pivot_df.empty:
+        return False
+
+    indexed_df = pivot_df.copy()
+    for topic in indexed_df.columns:
+        series = indexed_df[topic]
+        non_zero = series[series > 0]
+        if len(non_zero) == 0:
+            indexed_df[topic] = 0.0
+        else:
+            baseline = float(non_zero.iloc[0])
+            indexed_df[topic] = (series / baseline) * 100.0
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    x_positions = list(range(len(indexed_df.index)))
+    for topic in indexed_df.columns:
+        ax.plot(x_positions, indexed_df[topic], marker="o", linewidth=1.8, label=topic)
+
+    ax.set_title("Monthly Topic Trends (Indexed to First Non-zero Month = 100)")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Indexed Topic Count")
+    apply_sparse_month_ticks(ax, indexed_df.index.tolist(), max_ticks=12)
+    ax.axhline(100, linestyle="--", linewidth=1, alpha=0.4)
+    ax.legend()
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200, bbox_inches="tight")
+    plt.close()
+    return True
+
+
 def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_df, hypothesis_df):
     overall = overall_df.iloc[0].to_dict()
 
@@ -488,6 +602,11 @@ def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_d
                 f"- {row['year_month']}: {int(row['total_posts']):,} posts, positive rate {row['positive_rate']:.2%}, topic-tag share {row['share_posts_with_any_topic']:.2%}"
             )
         summary_lines.append("")
+        summary_lines.append("How to read the topic trend figures")
+        summary_lines.append("- plot_monthly_topic_trends.png shows absolute monthly topic counts and overall magnitude.")
+        summary_lines.append("- plot_monthly_topic_trends_small_multiples.png separates topics so lower-volume trends are easier to track.")
+        summary_lines.append("- plot_monthly_topic_trends_indexed.png normalizes each topic to 100 at its first non-zero month to compare trend shape.")
+        summary_lines.append("")
 
     if len(hypothesis_df) > 0:
         summary_lines.append("Hypothesis-testing readiness")
@@ -535,6 +654,11 @@ def build_markdown_summary(overall_df, time_df, subreddit_df, topic_df, monthly_
     lines.append("## Topic summary")
     for _, row in topic_df.sort_values(by='total_posts', ascending=False).iterrows():
         lines.append(f"- **{row['topic_bucket']}**: {int(row['total_posts']):,} posts, positive rate {row['positive_rate']:.2%}, negative rate {row['negative_rate']:.2%}")
+    lines.append("")
+    lines.append("## How to read the topic trend figures")
+    lines.append("- `plot_monthly_topic_trends.png` shows absolute monthly topic counts and overall magnitude.")
+    lines.append("- `plot_monthly_topic_trends_small_multiples.png` separates topics so lower-volume trends are easier to track.")
+    lines.append("- `plot_monthly_topic_trends_indexed.png` normalizes each topic to 100 at its first non-zero month to compare trend shape.")
     lines.append("")
 
     lines.append("## Hypothesis-testing readiness")
@@ -656,6 +780,14 @@ def main():
         created_plots.append("plot_monthly_positive_sentiment.png")
     if save_plot_monthly_topic_trends(topic_monthly_df, plots_dir / "plot_monthly_topic_trends.png"):
         created_plots.append("plot_monthly_topic_trends.png")
+    if save_plot_monthly_topic_trends_small_multiples(
+        topic_monthly_df, plots_dir / "plot_monthly_topic_trends_small_multiples.png"
+    ):
+        created_plots.append("plot_monthly_topic_trends_small_multiples.png")
+    if save_plot_monthly_topic_trends_indexed(
+        topic_monthly_df, plots_dir / "plot_monthly_topic_trends_indexed.png"
+    ):
+        created_plots.append("plot_monthly_topic_trends_indexed.png")
 
     print(f"Plots created: {len(created_plots)}")
     for name in created_plots:
