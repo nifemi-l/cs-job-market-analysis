@@ -1,41 +1,151 @@
-# EECS 767 Project: CS Job-Market Sentiment Across Pre-COVID, COVID, and Post-COVID Periods
+# EECS 767 Project
 
-This project studies CS job-market sentiment across pre-COVID, COVID, and post-COVID periods using:
+CS job-market sentiment analysis using:
+- **Sentiment140** for model training
+- **Reddit** data for downstream analysis, hypothesis tests, and report outputs
 
-- **Sentiment140** as the training dataset for sentiment classification
-- **Reddit submissions** as the application dataset for downstream analysis
+## Current State
 
-The overall workflow is:
+The pipeline is implemented end-to-end.
 
-1. Train a sentiment classifier on Sentiment140
-2. Filter and preprocess Reddit submissions
-3. Predict Reddit sentiment
-4. Group posts by time period
-5. Tag posts into topic buckets
-6. Compare sentiment by topic
-7. Measure topic trends over time
-8. Test project hypotheses
-9. Generate final tables, plots, and written summaries
+Generated artifacts exist under:
+- `src/data/reddit/analysis/`
+- `src/data/reddit/final_outputs/`
 
----
+`src/data/reddit/final_outputs/written_summary/final_summary.md` is the latest
+human-readable summary output from the reporting step.
 
 ## Setup
 
-Install dependencies first:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### DigitalOcean Spaces `.env` (project root)
+## Required Inputs
 
-Create a `.env` file in the project root:
+### 1) Sentiment140 training file
+
+Place the Sentiment140 CSV at:
 
 ```text
-EECS-767-Project/.env
+src/data/sentiment140/training.1600000.processed.noemoticon.csv
 ```
 
-Add:
+### 2) Reddit input file(s)
+
+Put Reddit input files (`.zst`, `.jsonl`, `.ndjson`) in:
+
+```text
+src/data/reddit/
+```
+
+`filter_reddit_submissions.py` can auto-detect a default file in that folder,
+or you can pass `--input`.
+
+## Project Structure
+
+```text
+src/
+├── training/
+│   └── train_sentiment.py
+├── pipeline/
+│   ├── filter_reddit_submissions.py
+│   ├── merge_filtered_csvs.py
+│   ├── select_reddit_fields.py
+│   ├── build_reddit_final_text.py
+│   ├── preprocess_reddit_text.py
+│   ├── predict_reddit_sentiment.py
+│   ├── upload_to_spaces.py
+│   └── download_from_spaces.py
+├── analysis/
+│   ├── group_reddit_by_time.py
+│   ├── tag_reddit_topics.py
+│   ├── compare_sentiment_by_topic.py
+│   └── measure_topic_trends_over_time.py
+├── reporting/
+│   ├── test_project_hypotheses.py
+│   └── create_final_report_outputs.py
+├── utils/
+│   ├── preprocessing.py
+│   └── topic_buckets.py
+└── data/
+    ├── sentiment140/
+    └── reddit/
+```
+
+## End-to-End Run Order
+
+Run from project root:
+
+```bash
+# 1) Train sentiment artifacts (creates src/models/*.joblib)
+python src/training/train_sentiment.py
+
+# 2) Filter Reddit data to target subreddits
+# (pass --input explicitly if needed)
+python src/pipeline/filter_reddit_submissions.py
+
+# 3) Merge per-subreddit filtered CSVs into one file
+python src/pipeline/merge_filtered_csvs.py
+
+# 4) Keep required columns
+python src/pipeline/select_reddit_fields.py
+
+# 5) Build final_text
+python src/pipeline/build_reddit_final_text.py
+
+# 6) Clean final_text
+python src/pipeline/preprocess_reddit_text.py
+
+# 7) Predict sentiment
+python src/pipeline/predict_reddit_sentiment.py
+
+# 8) Add time features / period labels
+python src/analysis/group_reddit_by_time.py
+
+# 9) Save topic bucket definitions
+python src/utils/topic_buckets.py
+
+# 10) Topic tagging
+python src/analysis/tag_reddit_topics.py
+
+# 11) Topic sentiment comparisons
+python src/analysis/compare_sentiment_by_topic.py
+
+# 12) Topic trends over time
+python src/analysis/measure_topic_trends_over_time.py
+
+# 13) Hypothesis tests
+python src/reporting/test_project_hypotheses.py
+
+# 14) Final tables, plots, and summaries
+python src/reporting/create_final_report_outputs.py
+```
+
+## Key Pipeline Outputs
+
+Primary intermediate files:
+- `src/data/reddit/filtered/all_subreddits_filtered.csv`
+- `src/data/reddit/processed/all_subreddits_selected_fields.csv`
+- `src/data/reddit/processed/all_subreddits_final_text.csv`
+- `src/data/reddit/processed/all_subreddits_cleaned_text.csv`
+- `src/data/reddit/predictions/all_subreddits_sentiment_predictions.csv`
+- `src/data/reddit/analysis/all_subreddits_time_grouped.csv`
+- `src/data/reddit/analysis/all_subreddits_topic_tagged.csv`
+
+Analysis/report outputs:
+- `src/data/reddit/analysis/step17_topic_sentiment/`
+- `src/data/reddit/analysis/step18_topic_trends/`
+- `src/data/reddit/analysis/step19_hypothesis_tests/`
+- `src/data/reddit/final_outputs/tables/`
+- `src/data/reddit/final_outputs/plots/`
+- `src/data/reddit/final_outputs/written_summary/`
+
+## Optional: DigitalOcean Spaces Sync
+
+If you use Spaces sync scripts, create a root `.env`:
 
 ```text
 DO_SPACES_KEY=your-access-key-id
@@ -44,1008 +154,20 @@ DO_SPACES_REGION=sfo3
 DO_SPACES_BUCKET=eecs767-reddit
 ```
 
-Security note:
-- `.env` contains credentials and must never be committed or pushed to GitHub.
-- This repo already ignores `.env` (`.env` and `**/.env` are in `.gitignore`).
-- Before any commit, verify `.env` is not staged:
+Upload:
 
 ```bash
-git status
-```
-
-### DigitalOcean Spaces scripts
-
-These scripts use the root `.env` file above:
-- `src/pipeline/upload_to_spaces.py`
-- `src/pipeline/download_from_spaces.py`
-
-Upload examples:
-
-```bash
-# Upload all pipeline outputs
 python src/pipeline/upload_to_spaces.py
-
-# Upload one file
-python src/pipeline/upload_to_spaces.py --files src/data/reddit/filtered/all_subreddits_filtered.csv
-
-# Custom prefix inside the bucket
-python src/pipeline/upload_to_spaces.py --prefix pipeline-outputs
 ```
 
-Download examples:
+Download:
 
 ```bash
-# Download everything under the prefix to src/data/reddit
 python src/pipeline/download_from_spaces.py
-
-# Custom prefix and local output directory
-python src/pipeline/download_from_spaces.py --prefix pipeline-outputs --output-dir src/data/reddit
-
-# Re-download and overwrite local files
-python src/pipeline/download_from_spaces.py --overwrite
 ```
 
----
-
-## Sentiment140 dataset placement
-
-Place the Sentiment140 CSV here before training:
-
-```text
-src/data/sentiment140/training.1600000.processed.noemoticon.csv
-```
-
----
-
-## Minimal project structure
-
-```text
-src/
-├── utils/
-│   └── preprocessing.py
-├── training/
-│   └── train_sentiment.py
-├── data/
-│   └── sentiment140/
-│       └── training.1600000.processed.noemoticon.csv
-└── models/
-```
-
----
-
-## Train the sentiment model
-
-Run from the project root:
-
-```bash
-python src/training/train_sentiment.py
-```
-
-This trains the sentiment model and saves the model artifacts into the `models/` folder.
-
----
-
-# Additional Pipeline Documentation
-
-This section documents the full project pipeline after the original training step.
-
-## Important run location
-
-All scripts can be run from the **project root** directory. Each script resolves its own paths relative to the `src/` directory automatically, regardless of your current working directory.
-
----
-
-## Sample Reddit validation run
-
-The pipeline was validated end to end using a **sample Reddit submissions file** from **February 2023**.
-
-This sample run was used to verify that:
-
-- the scripts run successfully
-- file handoffs between steps work correctly
-- sentiment prediction works
-- topic tagging works
-- trend analysis works
-- hypothesis testing works
-- final report outputs are produced correctly
-
-Important notes:
-
-- The February 2023 sample Reddit run is **only for code validation and testing**.
-- It is **not** the final basis for the academic conclusions of the project.
-- Final conclusions must be generated by rerunning the pipeline on the **true multi-year Reddit datasets**.
-
----
-
-## Expanded project structure
-
-```text
-src/
-├── utils/                              # Shared modules
-│   ├── preprocessing.py                #   Text cleaning + Sentiment140 loading
-│   └── topic_buckets.py                #   Topic bucket definitions + keywords (Step 15)
-│
-├── training/                           # Model training
-│   └── train_sentiment.py              #   Train LR + NB on Sentiment140
-│
-├── pipeline/                           # Reddit data ingestion & cleaning (Steps 7-12)
-│   ├── filter_reddit_submissions.py    #   Step 7: filter to target subreddits
-│   ├── select_reddit_fields.py         #   Step 8: keep important columns
-│   ├── build_reddit_final_text.py      #   Step 9: combine title + body
-│   ├── preprocess_reddit_text.py       #   Step 10: apply clean_text()
-│   └── predict_reddit_sentiment.py     #   Steps 11-12: predict sentiment
-│
-├── analysis/                           # Topic tagging & trend analysis (Steps 14-18)
-│   ├── group_reddit_by_time.py         #   Step 14: assign time periods
-│   ├── tag_reddit_topics.py            #   Step 16: keyword-based topic tagging
-│   ├── compare_sentiment_by_topic.py   #   Step 17: sentiment by topic
-│   └── measure_topic_trends_over_time.py  # Step 18: topic frequency over time
-│
-├── reporting/                          # Hypothesis tests & final outputs (Steps 19-20)
-│   ├── test_project_hypotheses.py      #   Step 19: H1-H4 hypothesis tests
-│   └── create_final_report_outputs.py  #   Step 20: tables, plots, written summary
-│
-├── data/
-│   ├── sentiment140/
-│   │   └── training.1600000.processed.noemoticon.csv
-│   │
-│   └── reddit/
-│       ├── RS_2023-02.zst
-│       ├── filtered/
-│       │   └── RS_2023-02_filtered.csv
-│       ├── processed/
-│       │   ├── RS_2023-02_selected_fields.csv
-│       │   ├── RS_2023-02_final_text.csv
-│       │   └── RS_2023-02_cleaned_text.csv
-│       ├── predictions/
-│       │   └── RS_2023-02_sentiment_predictions.csv
-│       ├── analysis/
-│       │   ├── RS_2023-02_time_grouped.csv
-│       │   ├── topic_buckets_definition.json
-│       │   ├── RS_2023-02_topic_tagged.csv
-│       │   ├── step17_topic_sentiment/
-│       │   ├── step18_topic_trends/
-│       │   └── step19_hypothesis_tests/
-│       └── final_outputs/
-│           ├── tables/
-│           ├── plots/
-│           └── written_summary/
-│
-└── models/
-    ├── tfidf_vectorizer.joblib
-    ├── logistic_regression.joblib
-    └── naive_bayes.joblib
-```
-
-### Major script purposes
-
-- `utils/preprocessing.py`
-Shared text cleaning utilities used during training and Reddit preprocessing.
-- `utils/topic_buckets.py`
-Defines the topic buckets and keyword lists for thematic tagging.
-- `training/train_sentiment.py`
-Trains sentiment models on Sentiment140, compares Logistic Regression and Naive Bayes, and saves the model artifacts.
-- `pipeline/filter_reddit_submissions.py`
-Reads the raw Reddit dump and filters it down to the target subreddits.
-- `pipeline/select_reddit_fields.py`
-Keeps only the Reddit fields needed for the rest of the project.
-- `pipeline/build_reddit_final_text.py`
-Builds one final text field per post by combining title and body according to the project rules.
-- `pipeline/preprocess_reddit_text.py`
-Applies the same core text cleaning used in training to the Reddit posts.
-- `pipeline/predict_reddit_sentiment.py`
-Loads the trained vectorizer and sentiment model, then predicts sentiment for each cleaned Reddit post.
-- `analysis/group_reddit_by_time.py`
-Converts timestamps and assigns each post to year, month, year-month, and study period.
-- `analysis/tag_reddit_topics.py`
-Tags each Reddit post into one or more topic buckets based on keyword rules.
-- `analysis/compare_sentiment_by_topic.py`
-Compares positive versus negative sentiment across topic categories.
-- `analysis/measure_topic_trends_over_time.py`
-Measures how often each topic appears over time.
-- `reporting/test_project_hypotheses.py`
-Runs the hypothesis tests for H1 through H4.
-- `reporting/create_final_report_outputs.py`
-Produces final tables, plots, and written summaries for the report and presentation.
-
----
-
-## Training stage: Step 1 through Step 5
-
-The first part of the project is model training using the **Sentiment140** dataset. This creates the reusable sentiment model artifacts that the Reddit pipeline depends on later.
-
-### Step 1. Place the Sentiment140 CSV in the correct folder
-
-**Purpose**
-Provide the labeled training data for the sentiment classifier.
-
-**Expected input file**
-
-```text
-src/data/sentiment140/training.1600000.processed.noemoticon.csv
-```
-
-**Important note**
-The CSV must be placed in the `data/sentiment140/` folder before running training.
-
----
-
-### Step 2. Text cleaning logic in `preprocessing.py`
-
-**Script**
-`utils/preprocessing.py`
-
-**Purpose**
-This module contains the shared text cleaning logic used across the project. It standardizes how text is prepared before vectorization and modeling.
-
-**What it does conceptually**
-
-- normalizes raw text input
-- cleans noise from social media text
-- prepares text for TF-IDF vectorization
-- exposes the `clean_text()` function so the Reddit pipeline uses the same cleaning logic as training
-
-**Why this matters**
-Using the same cleaning function for both training data and Reddit inference data keeps preprocessing consistent across the full pipeline.
-
----
-
-### Step 3. Train the sentiment models
-
-**Script**
-`training/train_sentiment.py`
-
-**Command**
-
-```bash
-python src/training/train_sentiment.py
-```
-
-**Purpose**
-This script reads the Sentiment140 CSV, preprocesses text, vectorizes it, trains multiple sentiment models, evaluates them, and saves the model artifacts.
-
-**Input file**
-
-```text
-data/sentiment140/training.1600000.processed.noemoticon.csv
-```
-
-**What `train_sentiment.py` does**
-
-- loads the Sentiment140 training CSV
-- applies preprocessing using `preprocessing.py`
-- vectorizes cleaned text using TF-IDF
-- trains at least:
-  - Logistic Regression
-  - Naive Bayes
-- evaluates both models on the held-out evaluation split
-- saves the trained vectorizer and trained models into `models/`
-
----
-
-### Step 4. Review model comparison results
-
-**Purpose**
-Choose the model that will be used later for Reddit sentiment prediction.
-
-**Observed sample training results**
-
-- **Logistic Regression**
-  - accuracy: approximately **0.7983**
-  - F1 score: approximately **0.8010**
-- **Naive Bayes**
-  - accuracy: approximately **0.7767**
-  - F1 score: approximately **0.7745**
-
-**Decision**
-**Logistic Regression** was selected as the main sentiment model because it performed better than Naive Bayes on both accuracy and F1.
-
----
-
-### Step 5. Confirm saved model artifacts in `models/`
-
-**Output folder**
-
-```text
-src/models/
-```
-
-**Expected output files**
-
-```text
-models/tfidf_vectorizer.joblib
-models/logistic_regression.joblib
-models/naive_bayes.joblib
-```
-
-**Important notes**
-
-- The Reddit prediction pipeline later depends on:
-  - `models/tfidf_vectorizer.joblib`
-  - `models/logistic_regression.joblib`
-- If these files do not exist, the Reddit prediction step will fail.
-- Training only needs to be rerun if the models do not exist or if the team intentionally wants to retrain them.
-
----
-
-## Reddit pipeline: Step 6 through Step 20
-
-This section documents the full Reddit application pipeline used after the sentiment model has been trained.
-
----
-
-### Step 6. Place the Reddit submissions file in `src/data/reddit/`
-
-**Purpose**
-Provide the Reddit input dataset for the application pipeline.
-
-**Sample validation file placement**
-
-```text
-src/data/reddit/RS_2023-02.zst
-```
-
-**Important notes**
-
-- For validation, a **sample February 2023 Reddit submissions file** was used.
-- This sample file was only for testing and validating that the full pipeline works.
-- The real project later needs the correct **multi-year Reddit files** covering the intended analysis periods.
-
----
-
-### Step 7. Filter the raw Reddit dump to the target subreddits
-
-**Script**
-`pipeline/filter_reddit_submissions.py`
-
-**Command**
-
-Use the default example path below **or replace it with the real inner `.zst` file path if the Reddit file is nested inside a same-named folder on disk**.
-
-```bash
-python src/pipeline/filter_reddit_submissions.py --input "src/data/reddit/RS_2023-02.zst"
-```
-
-Example of a nested-file case:
-
-```bash
-python src/pipeline/filter_reddit_submissions.py --input "src/data/reddit/RS_2023-02/RS_2023-02.zst"
-```
-
-**Purpose**
-Reads the raw Reddit submissions dump and keeps only posts from the subreddits relevant to CS job-market sentiment.
-
-**Target subreddits**
-
-- `cscareerquestions`
-- `csmajors`
-- `recruitinghell`
-- `jobs`
-
-**Input file**
-
-```text
-data/reddit/RS_2023-02.zst
-```
-
-**Output file**
-
-```text
-data/reddit/filtered/RS_2023-02_filtered.csv
-```
-
-**Important notes**
-
-- The Reddit `.zst` file may sometimes be inside a nested folder with the same name as the archive. If that happens, point `--input` to the actual inner file path.
-- The script reads the `.zst` file **directly in Python using `zstandard`**.
-- Manual decompression is not required.
-
----
-
-### Step 8. Keep only the required Reddit fields
-
-**Script**
-`pipeline/select_reddit_fields.py`
-
-**Command**
-
-```bash
-python src/pipeline/select_reddit_fields.py
-```
-
-**Purpose**
-Reduces the filtered Reddit file to only the columns needed for the downstream pipeline.
-
-**Input file**
-
-```text
-data/reddit/filtered/RS_2023-02_filtered.csv
-```
-
-**Kept fields**
-
-- `id`
-- `subreddit`
-- `author`
-- `created_utc`
-- `title`
-- `body`
-
-**Output file**
-
-```text
-data/reddit/processed/RS_2023-02_selected_fields.csv
-```
-
-**Important note**
-This step simplifies later processing and avoids carrying unused Reddit metadata through the rest of the pipeline.
-
----
-
-### Step 9. Build the final text field for each Reddit post
-
-**Script**
-`pipeline/build_reddit_final_text.py`
-
-**Command**
-
-```bash
-python src/pipeline/build_reddit_final_text.py
-```
-
-**Purpose**
-Creates one analysis-ready text field called `final_text` by combining title and body according to the project rules.
-
-**Input file**
-
-```text
-data/reddit/processed/RS_2023-02_selected_fields.csv
-```
-
-**Rules used to build `final_text`**
-
-- if both title and body exist, combine them
-- if only title exists, use the title
-- if only body exists, use the body
-- if both are empty, drop the row
-
-**Output file**
-
-```text
-data/reddit/processed/RS_2023-02_final_text.csv
-```
-
-**Important note**
-This step ensures that sentiment prediction and topic tagging always operate on one final text column per post.
-
----
-
-### Step 10. Clean the final Reddit text
-
-**Script**
-`pipeline/preprocess_reddit_text.py`
-
-**Command**
-
-```bash
-python src/pipeline/preprocess_reddit_text.py
-```
-
-**Purpose**
-Applies the same `clean_text()` function from `preprocessing.py` to the Reddit posts so that Reddit inference data is cleaned the same way as the training data.
-
-**Input file**
-
-```text
-data/reddit/processed/RS_2023-02_final_text.csv
-```
-
-**What it adds**
-
-- `cleaned_text`
-
-**Additional behavior**
-
-- drops rows whose cleaned text becomes empty after preprocessing
-
-**Output file**
-
-```text
-data/reddit/processed/RS_2023-02_cleaned_text.csv
-```
-
-**Important note**
-This consistency between training-time cleaning and inference-time cleaning is necessary for the TF-IDF features to behave correctly.
-
----
-
-### Step 11. Load the trained sentiment artifacts
-
-### Step 12. Predict sentiment for each Reddit post
-
-**Script**
-`pipeline/predict_reddit_sentiment.py`
-
-**Command**
-
-```bash
-python src/pipeline/predict_reddit_sentiment.py
-```
-
-**Purpose**
-Loads the trained vectorizer and main sentiment model, transforms the Reddit cleaned text, predicts sentiment, and saves the prediction results.
-
-**Input file**
-
-```text
-data/reddit/processed/RS_2023-02_cleaned_text.csv
-```
-
-**Required model files**
-
-```text
-models/tfidf_vectorizer.joblib
-models/logistic_regression.joblib
-```
-
-**What it does**
-
-- loads `models/tfidf_vectorizer.joblib`
-- loads `models/logistic_regression.joblib`
-- transforms `cleaned_text` into model features
-- predicts the sentiment class
-- writes prediction probabilities and labels back into the output CSV
-
-**Added columns**
-
-- `predicted_label`
-- `predicted_sentiment`
-- `prob_negative`
-- `prob_positive`
-
-**Output file**
-
-```text
-data/reddit/predictions/RS_2023-02_sentiment_predictions.csv
-```
-
-**Important note**
-This step uses the selected Logistic Regression model, not Naive Bayes, because Logistic Regression was chosen as the stronger model during training.
-
----
-
-### Step 13. Save the predicted Reddit posts with sentiment labels
-
-**Status**
-This step is effectively satisfied by the output of `predict_reddit_sentiment.py`.
-
-**Explanation**
-The file below is the saved Reddit post dataset together with its sentiment labels and probabilities:
-
-```text
-data/reddit/predictions/RS_2023-02_sentiment_predictions.csv
-```
-
-So there is no separate extra script for Step 13. The save operation is already part of Step 11 and Step 12.
-
----
-
-### Step 14. Group Reddit posts by time and study period
-
-**Script**
-`analysis/group_reddit_by_time.py`
-
-**Command**
-
-```bash
-python src/analysis/group_reddit_by_time.py
-```
-
-**Purpose**
-Converts Unix timestamps into readable time features and assigns each post to the appropriate study period.
-
-**Input file**
-
-```text
-data/reddit/predictions/RS_2023-02_sentiment_predictions.csv
-```
-
-**What it adds**
-
-- `created_datetime_utc`
-- `year`
-- `month`
-- `year_month`
-- `time_period`
-
-**Time period mapping**
-
-- **pre-COVID** = 2017 to 2019
-- **COVID** = 2020 to 2021
-- **post-COVID** = 2022 and later
-
-**Output file**
-
-```text
-data/reddit/analysis/RS_2023-02_time_grouped.csv
-```
-
-**Important note**
-For the February 2023 sample validation file, all posts naturally fall into the post-COVID period. That is fine for validating code flow, but not enough for full period comparison analysis.
-
----
-
-### Step 15. Define topic buckets and keyword rules
-
-**Script**
-`utils/topic_buckets.py`
-
-**Command**
-
-```bash
-python src/utils/topic_buckets.py
-```
-
-**Purpose**
-Defines the thematic topic buckets used in the later topic-tagging and analysis steps.
-
-**Bucket names**
-
-- `layoffs_market`
-- `recruiting_pipeline`
-- `compensation`
-- `work_mode`
-- `companies`
-- `ai_llm`
-
-**Output file**
-
-```text
-data/reddit/analysis/topic_buckets_definition.json
-```
-
-**Important note**
-This JSON definition is used as the keyword-rule source of truth for topic tagging in the next step.
-
----
-
-### Step 16. Tag each Reddit post into one or more topic buckets
-
-**Script**
-`analysis/tag_reddit_topics.py`
-
-**Command**
-
-```bash
-python src/analysis/tag_reddit_topics.py
-```
-
-**Purpose**
-Applies the keyword-based topic rules to each Reddit post and records which buckets matched.
-
-**Input files**
-
-```text
-data/reddit/analysis/RS_2023-02_time_grouped.csv
-data/reddit/analysis/topic_buckets_definition.json
-```
-
-**What it adds**
-
-- `topic_list`
-- `num_topics`
-- `has_any_topic`
-- one `topic_...` column per bucket
-- one `matched_keywords_...` column per bucket
-
-**Output file**
-
-```text
-data/reddit/analysis/RS_2023-02_topic_tagged.csv
-```
-
-**Important note**
-A single post may belong to multiple topic buckets. This is expected and is part of the design.
-
----
-
-### Step 17. Compare sentiment across topics
-
-**Script**
-`analysis/compare_sentiment_by_topic.py`
-
-**Command**
-
-```bash
-python src/analysis/compare_sentiment_by_topic.py
-```
-
-**Purpose**
-Compares positive and negative sentiment across the topic buckets after topic tagging.
-
-**Input file**
-
-```text
-data/reddit/analysis/RS_2023-02_topic_tagged.csv
-```
-
-**Output folder**
-
-```text
-data/reddit/analysis/step17_topic_sentiment/
-```
-
-**Output files**
-
-- `topic_sentiment_summary.csv`
-- `topic_sentiment_ranked_positive.csv`
-- `topic_sentiment_ranked_negative.csv`
-- `topic_post_long_format.csv`
-
-**Important note**
-This step is useful for seeing which topic groups are associated with more negative or more positive discussion.
-
----
-
-### Step 18. Measure topic trends over time
-
-**Script**
-`analysis/measure_topic_trends_over_time.py`
-
-**Command**
-
-```bash
-python src/analysis/measure_topic_trends_over_time.py
-```
-
-**Purpose**
-Measures how often each topic appears over time and produces monthly and period-level summaries.
-
-**Input file**
-
-```text
-data/reddit/analysis/RS_2023-02_topic_tagged.csv
-```
-
-**Output folder**
-
-```text
-data/reddit/analysis/step18_topic_trends/
-```
-
-**Output files**
-
-- `monthly_post_totals.csv`
-- `topic_monthly_trends_long.csv`
-- `topic_monthly_trends_wide_counts.csv`
-- `topic_monthly_trends_wide_share_all_posts.csv`
-- `topic_monthly_trends_wide_share_topic_tagged_posts.csv`
-- `topic_time_period_summary.csv`
-- `topic_subreddit_monthly_trends.csv`
-- `topic_overall_frequency_summary.csv`
-
-**Important note**
-With only a one-month sample input, this step still runs successfully, but the trend outputs are naturally limited because there is not enough time coverage for real temporal conclusions.
-
----
-
-### Step 19. Test the project hypotheses H1 to H4
-
-**Script**
-`reporting/test_project_hypotheses.py`
-
-**Command**
-
-```bash
-python src/reporting/test_project_hypotheses.py
-```
-
-**Purpose**
-Runs the project’s hypothesis tests and saves the structured outputs for interpretation.
-
-**Input file**
-
-```text
-data/reddit/analysis/RS_2023-02_topic_tagged.csv
-```
-
-**Output folder**
-
-```text
-data/reddit/analysis/step19_hypothesis_tests/
-```
-
-**Output files**
-
-- `h1_recruiting_pre_vs_post_period_summary.csv`
-- `h1_recruiting_pre_vs_post_test.csv`
-- `h2_layoffs_frequency_by_period.csv`
-- `h2_layoffs_frequency_tests.csv`
-- `h2_layoffs_sentiment_tests.csv`
-- `h3_user_topic_sentiment_long.csv`
-- `h3_user_topic_sentiment_wide.csv`
-- `h3_user_topic_correlation_matrix.csv`
-- `h3_topic_user_coverage.csv`
-- `h3_summary.csv`
-- `h4_monthly_ai_sentiment_trends.csv`
-- `h4_ai_sentiment_correlation.csv`
-- `hypothesis_test_report.txt`
-
-**Important implementation note**
-The H3 correlation bug was fixed by avoiding the `stack().reset_index()` naming collision and replacing it with a safer melt-based conversion.
-
-**Important interpretation notes**
-With a one-month sample file, some hypotheses are only partially testable, especially the time-based hypotheses. This is especially important for H1 and H4, which depend more directly on cross-period or over-time patterns. The scripts and outputs are valid for pipeline validation, but the sample-based results should not be treated as the final study evidence.
-
----
-
-### Step 20. Create final tables, plots, and written summaries
-
-**Script**
-`reporting/create_final_report_outputs.py`
-
-**Command**
-
-```bash
-python src/reporting/create_final_report_outputs.py
-```
-
-**Purpose**
-Builds the final report-ready artifacts from the full processed Reddit dataset.
-
-**Direct input file**
-
-```text
-data/reddit/analysis/RS_2023-02_topic_tagged.csv
-```
-
-**Output folder**
-
-```text
-data/reddit/final_outputs/
-```
-
-**Subfolders**
-
-- `tables/`
-- `plots/`
-- `written_summary/`
-
-**Typical outputs**
-
-- CSV summary tables
-- PNG plots
-- `final_summary.txt`
-- `final_summary.md`
-
-**Important note**
-This script is run directly from the Step 16 topic-tagged dataset and produces final report-ready outputs from the full processed dataset. This is the final script in the sample-validated pipeline. Once it runs successfully, the entire code workflow from raw Reddit file to final report artifacts has been validated.
-
----
-
-## Full command sequence in order
-
-The following sequence shows the full command order for the pipeline, starting with training and then moving through Reddit processing. All commands are run from the **project root**.
-
-**Important note before Step 7:** the `--input` path may need to be adjusted to the actual real Reddit `.zst` file path on disk if the file is nested inside a same-named folder.
-
-```bash
-python src/training/train_sentiment.py
-
-python src/pipeline/filter_reddit_submissions.py --input "src/data/reddit/RS_2023-02.zst"
-
-python src/pipeline/select_reddit_fields.py
-
-python src/pipeline/build_reddit_final_text.py
-
-python src/pipeline/preprocess_reddit_text.py
-
-python src/pipeline/predict_reddit_sentiment.py
-
-python src/analysis/group_reddit_by_time.py
-
-python src/utils/topic_buckets.py
-
-python src/analysis/tag_reddit_topics.py
-
-python src/analysis/compare_sentiment_by_topic.py
-
-python src/analysis/measure_topic_trends_over_time.py
-
-python src/reporting/test_project_hypotheses.py
-
-python src/reporting/create_final_report_outputs.py
-```
-
-### Practical run order notes
-
-- Run `training/train_sentiment.py` first so that the `models/` files exist.
-- After that, the Reddit pipeline begins at `pipeline/filter_reddit_submissions.py`.
-- For real project results, rerun the Reddit processing sequence on the true input datasets.
-
----
-
-## Troubleshooting and practical notes
-
-### 1. Scripts are location-independent
-
-All scripts resolve their data paths relative to the `src/` directory automatically using `Path(__file__)`. You can run them from any working directory.
-
----
-
-### 2. If the Reddit `.zst` file is nested inside another folder, point to the real inner file
-
-Sometimes the Reddit file may appear inside a directory with the same base name. If so, make sure the `--input` argument points to the actual `.zst` file, not just the outer folder.
-
-Example pattern:
-
-```bash
-python src/pipeline/filter_reddit_submissions.py --input "src/data/reddit/RS_2023-02/RS_2023-02.zst"
-```
-
-Use the actual real path on disk.
-
----
-
-### 3. The Reddit `.zst` file is read directly in Python
-
-Do **not** manually extract the Reddit dump first unless you intentionally want to change the workflow. The code reads `.zst` directly using `zstandard`.
-
----
-
-### 4. The `models/` files must exist before prediction
-
-Before running:
-
-```bash
-python src/pipeline/predict_reddit_sentiment.py
-```
-
-make sure these files exist:
-
-```text
-src/models/tfidf_vectorizer.joblib
-src/models/logistic_regression.joblib
-```
-
-If they do not exist, rerun:
-
-```bash
-python src/training/train_sentiment.py
-```
-
----
-
-### 5. Sample file results are only for validation
-
-If the pipeline is run on the February 2023 sample file, the outputs are only meant to validate that the project code works correctly. They should not be treated as the final project evidence.
-
----
-
-### 6. When the real Reddit files arrive, rerun from Step 7 onward
-
-Once the correct multi-year Reddit files are available, rerun the Reddit pipeline starting from:
-
-```bash
-python src/pipeline/filter_reddit_submissions.py --input "..."
-```
-
-and continue through Step 20 so that all downstream files, analyses, tables, plots, and written summaries are regenerated from the real data.
-
----
-
-## What still must be done
-
-The pipeline has been **fully implemented and validated on a sample Reddit file**, which means the project code is working end to end. However, this does **not** yet mean that the final study results are complete.
-
-The real remaining task is to obtain the correct **multi-year Reddit datasets** and rerun the full Reddit pipeline on the true project data.
-
-Specifically, the team still must:
-
-1. obtain the correct Reddit submission files for the intended multi-year study period
-2. place those files into the expected project location
-3. rerun **Step 7 through Step 20** on the real data
-4. regenerate the filtered files, processed files, sentiment predictions, topic analyses, hypothesis tests, final tables, final plots, and written summaries
-5. use those regenerated outputs for the **final report and presentation**
-
-The current sample-based outputs are useful because they prove that the code pipeline works, but they should **not** be treated as the final academic conclusions of the project.
+## Notes
+
+- `filter_reddit_submissions.py` reads `.zst` directly with `zstandard`.
+- Prediction depends on `src/models/tfidf_vectorizer.joblib` and
+  `src/models/logistic_regression.joblib`.

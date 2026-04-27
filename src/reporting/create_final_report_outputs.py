@@ -616,8 +616,8 @@ def build_written_summary(overall_df, time_df, subreddit_df, topic_df, monthly_d
 
     if int(overall["num_months"]) < 2:
         summary_lines.append("Important note")
-        summary_lines.append("- This current run is based on a sample month, so time-based comparisons and multi-era hypothesis testing are not yet final.")
-        summary_lines.append("- When the full dataset is available, rerun the same pipeline to generate the final report and presentation outputs.")
+        summary_lines.append("- This run contains fewer than two months of data, so time-based comparisons and multi-era hypothesis testing are not yet final.")
+        summary_lines.append("- Rerun the same pipeline on the intended full analysis window to generate final report and presentation outputs.")
         summary_lines.append("")
 
     return "\n".join(summary_lines)
@@ -668,7 +668,7 @@ def build_markdown_summary(overall_df, time_df, subreddit_df, topic_df, monthly_
 
     if int(overall["num_months"]) < 2:
         lines.append("## Important note")
-        lines.append("- This run uses a sample dataset, so the final comparative conclusions must be generated again on the full real dataset.")
+        lines.append("- This run contains fewer than two months of data, so final comparative conclusions should be regenerated on the intended full analysis window.")
         lines.append("")
 
     return "\n".join(lines)
