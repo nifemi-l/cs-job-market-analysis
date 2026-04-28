@@ -1,0 +1,159 @@
+FINAL PROJECT SUMMARY
+======================================================================
+
+Dataset overview
+- Total posts analyzed: 1,535,813
+- Positive posts: 741,215 (48.26%)
+- Negative posts: 794,598 (51.74%)
+- Posts with at least one topic tag: 807,244 (52.56%)
+- Distinct subreddits: 4
+- Distinct months: 108
+- Distinct time periods: 3
+
+Sentiment by time period
+- pre-COVID: 337,918 posts, positive rate 52.03%, negative rate 47.97%
+- COVID: 332,373 posts, positive rate 49.00%, negative rate 51.00%
+- post-COVID: 865,522 posts, positive rate 46.51%, negative rate 53.49%
+
+Sentiment by subreddit
+- jobs: 709,859 posts, positive rate 42.14%, negative rate 57.86%
+- cscareerquestions: 464,543 posts, positive rate 56.48%, negative rate 43.52%
+- csmajors: 188,342 posts, positive rate 59.07%, negative rate 40.93%
+- recruitinghell: 173,069 posts, positive rate 39.55%, negative rate 60.45%
+
+Topic summary
+Most frequent topics:
+- recruiting_pipeline: 645,071 posts (42.00% of all posts)
+- compensation: 186,757 posts (12.16% of all posts)
+- work_mode: 70,868 posts (4.61% of all posts)
+
+Most positive topics:
+- companies: positive rate 58.99% across 70,498 posts
+- ai_llm: positive rate 49.72% across 47,113 posts
+- recruiting_pipeline: positive rate 45.50% across 645,071 posts
+
+Most negative topics:
+- layoffs_market: negative rate 77.62% across 55,092 posts
+- compensation: negative rate 69.83% across 186,757 posts
+- work_mode: negative rate 69.02% across 70,868 posts
+
+Monthly trend overview
+- 2017-01: 8,729 posts, positive rate 55.65%, topic-tag share 44.40%
+- 2017-02: 8,040 posts, positive rate 55.12%, topic-tag share 46.16%
+- 2017-03: 8,004 posts, positive rate 53.94%, topic-tag share 49.23%
+- 2017-04: 7,189 posts, positive rate 52.94%, topic-tag share 48.35%
+- 2017-05: 7,305 posts, positive rate 50.09%, topic-tag share 48.75%
+- 2017-06: 7,693 posts, positive rate 51.53%, topic-tag share 46.98%
+- 2017-07: 7,904 posts, positive rate 51.77%, topic-tag share 46.85%
+- 2017-08: 8,119 posts, positive rate 50.44%, topic-tag share 48.69%
+- 2017-09: 7,748 posts, positive rate 51.91%, topic-tag share 49.28%
+- 2017-10: 8,709 posts, positive rate 53.54%, topic-tag share 52.19%
+- 2017-11: 8,171 posts, positive rate 54.34%, topic-tag share 49.97%
+- 2017-12: 6,999 posts, positive rate 51.92%, topic-tag share 48.89%
+- 2018-01: 8,282 posts, positive rate 53.25%, topic-tag share 48.94%
+- 2018-02: 7,837 posts, positive rate 50.08%, topic-tag share 50.70%
+- 2018-03: 9,063 posts, positive rate 50.16%, topic-tag share 52.79%
+- 2018-04: 8,898 posts, positive rate 51.74%, topic-tag share 48.64%
+- 2018-05: 9,257 posts, positive rate 51.33%, topic-tag share 50.12%
+- 2018-06: 9,102 posts, positive rate 51.42%, topic-tag share 46.53%
+- 2018-07: 9,040 posts, positive rate 50.59%, topic-tag share 46.96%
+- 2018-08: 9,923 posts, positive rate 48.05%, topic-tag share 49.82%
+- 2018-09: 9,017 posts, positive rate 52.11%, topic-tag share 48.93%
+- 2018-10: 10,619 posts, positive rate 54.67%, topic-tag share 49.37%
+- 2018-11: 9,759 posts, positive rate 53.94%, topic-tag share 49.33%
+- 2018-12: 8,845 posts, positive rate 54.36%, topic-tag share 45.13%
+- 2019-01: 10,569 posts, positive rate 53.12%, topic-tag share 46.30%
+- 2019-02: 9,864 posts, positive rate 53.94%, topic-tag share 48.81%
+- 2019-03: 11,056 posts, positive rate 54.16%, topic-tag share 46.39%
+- 2019-04: 10,953 posts, positive rate 50.39%, topic-tag share 49.01%
+- 2019-05: 11,401 posts, positive rate 49.89%, topic-tag share 48.88%
+- 2019-06: 10,804 posts, positive rate 49.05%, topic-tag share 48.29%
+- 2019-07: 11,069 posts, positive rate 48.08%, topic-tag share 50.28%
+- 2019-08: 12,861 posts, positive rate 46.54%, topic-tag share 56.78%
+- 2019-09: 11,400 posts, positive rate 52.18%, topic-tag share 48.70%
+- 2019-10: 12,457 posts, positive rate 53.34%, topic-tag share 49.63%
+- 2019-11: 11,135 posts, positive rate 54.46%, topic-tag share 50.13%
+- 2019-12: 10,097 posts, positive rate 55.54%, topic-tag share 48.33%
+- 2020-01: 12,317 posts, positive rate 54.06%, topic-tag share 47.16%
+- 2020-02: 12,769 posts, positive rate 55.56%, topic-tag share 45.44%
+- 2020-03: 11,830 posts, positive rate 55.81%, topic-tag share 44.36%
+- 2020-04: 10,293 posts, positive rate 53.71%, topic-tag share 44.68%
+- 2020-05: 12,010 posts, positive rate 59.04%, topic-tag share 39.53%
+- 2020-06: 11,347 posts, positive rate 54.12%, topic-tag share 42.69%
+- 2020-07: 13,086 posts, positive rate 54.62%, topic-tag share 43.96%
+- 2020-08: 13,552 posts, positive rate 53.95%, topic-tag share 47.53%
+- 2020-09: 13,522 posts, positive rate 52.44%, topic-tag share 52.15%
+- 2020-10: 14,336 posts, positive rate 53.77%, topic-tag share 53.88%
+- 2020-11: 12,600 posts, positive rate 54.33%, topic-tag share 53.96%
+- 2020-12: 12,752 posts, positive rate 53.87%, topic-tag share 52.03%
+- 2021-01: 13,670 posts, positive rate 52.40%, topic-tag share 51.90%
+- 2021-02: 13,627 posts, positive rate 51.74%, topic-tag share 53.93%
+- 2021-03: 14,445 posts, positive rate 50.54%, topic-tag share 52.33%
+- 2021-04: 14,273 posts, positive rate 50.45%, topic-tag share 52.47%
+- 2021-05: 14,788 posts, positive rate 48.90%, topic-tag share 51.78%
+- 2021-06: 14,680 posts, positive rate 47.06%, topic-tag share 53.71%
+- 2021-07: 14,888 posts, positive rate 47.72%, topic-tag share 47.84%
+- 2021-08: 16,028 posts, positive rate 46.29%, topic-tag share 48.01%
+- 2021-09: 16,144 posts, positive rate 34.92%, topic-tag share 41.94%
+- 2021-10: 17,078 posts, positive rate 31.44%, topic-tag share 40.71%
+- 2021-11: 16,965 posts, positive rate 37.72%, topic-tag share 44.82%
+- 2021-12: 15,373 posts, positive rate 38.88%, topic-tag share 44.20%
+- 2022-01: 17,867 posts, positive rate 41.88%, topic-tag share 45.00%
+- 2022-02: 16,700 posts, positive rate 44.41%, topic-tag share 45.65%
+- 2022-03: 18,578 posts, positive rate 54.26%, topic-tag share 48.94%
+- 2022-04: 16,850 posts, positive rate 53.82%, topic-tag share 48.29%
+- 2022-05: 16,602 posts, positive rate 51.87%, topic-tag share 49.19%
+- 2022-06: 16,563 posts, positive rate 50.70%, topic-tag share 48.60%
+- 2022-07: 16,956 posts, positive rate 51.05%, topic-tag share 49.07%
+- 2022-08: 18,581 posts, positive rate 52.36%, topic-tag share 49.50%
+- 2022-09: 17,167 posts, positive rate 54.67%, topic-tag share 49.45%
+- 2022-10: 18,001 posts, positive rate 56.11%, topic-tag share 49.93%
+- 2022-11: 16,360 posts, positive rate 55.81%, topic-tag share 48.71%
+- 2022-12: 14,420 posts, positive rate 55.83%, topic-tag share 46.52%
+- 2023-01: 16,029 posts, positive rate 51.60%, topic-tag share 49.23%
+- 2023-02: 14,502 posts, positive rate 51.46%, topic-tag share 49.26%
+- 2023-03: 16,521 posts, positive rate 50.57%, topic-tag share 50.25%
+- 2023-04: 15,180 posts, positive rate 52.56%, topic-tag share 47.95%
+- 2023-05: 16,090 posts, positive rate 50.75%, topic-tag share 48.48%
+- 2023-06: 13,784 posts, positive rate 45.92%, topic-tag share 55.88%
+- 2023-07: 17,379 posts, positive rate 41.92%, topic-tag share 60.73%
+- 2023-08: 20,377 posts, positive rate 42.00%, topic-tag share 61.62%
+- 2023-09: 17,961 posts, positive rate 43.12%, topic-tag share 61.77%
+- 2023-10: 19,012 posts, positive rate 43.75%, topic-tag share 62.20%
+- 2023-11: 18,051 posts, positive rate 44.39%, topic-tag share 62.54%
+- 2023-12: 16,704 posts, positive rate 42.65%, topic-tag share 60.65%
+- 2024-01: 21,876 posts, positive rate 43.01%, topic-tag share 59.63%
+- 2024-02: 20,704 posts, positive rate 42.85%, topic-tag share 60.44%
+- 2024-03: 21,377 posts, positive rate 45.18%, topic-tag share 58.16%
+- 2024-04: 20,606 posts, positive rate 44.73%, topic-tag share 56.16%
+- 2024-05: 20,097 posts, positive rate 40.34%, topic-tag share 60.84%
+- 2024-06: 18,782 posts, positive rate 42.11%, topic-tag share 57.76%
+- 2024-07: 18,922 posts, positive rate 41.03%, topic-tag share 60.06%
+- 2024-08: 20,817 posts, positive rate 40.91%, topic-tag share 60.18%
+- 2024-09: 20,235 posts, positive rate 43.29%, topic-tag share 59.91%
+- 2024-10: 21,105 posts, positive rate 45.23%, topic-tag share 60.76%
+- 2024-11: 18,303 posts, positive rate 46.21%, topic-tag share 59.88%
+- 2024-12: 16,670 posts, positive rate 45.76%, topic-tag share 58.31%
+- 2025-01: 18,594 posts, positive rate 45.01%, topic-tag share 60.22%
+- 2025-02: 17,847 posts, positive rate 44.32%, topic-tag share 59.88%
+- 2025-03: 20,556 posts, positive rate 44.06%, topic-tag share 59.62%
+- 2025-04: 18,080 posts, positive rate 42.83%, topic-tag share 60.33%
+- 2025-05: 18,591 posts, positive rate 43.16%, topic-tag share 59.91%
+- 2025-06: 18,193 posts, positive rate 45.61%, topic-tag share 56.66%
+- 2025-07: 19,902 posts, positive rate 45.45%, topic-tag share 55.21%
+- 2025-08: 19,416 posts, positive rate 46.72%, topic-tag share 54.41%
+- 2025-09: 18,363 posts, positive rate 45.65%, topic-tag share 56.41%
+- 2025-10: 18,377 posts, positive rate 45.44%, topic-tag share 59.98%
+- 2025-11: 16,892 posts, positive rate 46.70%, topic-tag share 57.35%
+- 2025-12: 14,982 posts, positive rate 45.70%, topic-tag share 58.54%
+
+How to read the topic trend figures
+- plot_monthly_topic_trends.png shows absolute monthly topic counts and overall magnitude.
+- plot_monthly_topic_trends_small_multiples.png separates topics so lower-volume trends are easier to track.
+- plot_monthly_topic_trends_indexed.png normalizes each topic to 100 at its first non-zero month to compare trend shape.
+
+Hypothesis-testing readiness
+- H1: ready_for_real_test (pre-COVID recruiting posts=135876, post-COVID recruiting posts=379892)
+- H2: partially_testable (layoffs-topic posts in current dataset=55092)
+- H3: partially_testable (eligible users with >=3 posts=89627)
+- H4: ready_for_real_test (distinct months in dataset=108)

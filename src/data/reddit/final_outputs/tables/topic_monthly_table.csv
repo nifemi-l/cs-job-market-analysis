@@ -1,0 +1,649 @@
+year_month,topic_bucket,topic_description,total_posts_in_month,topic_posts_in_month,topic_share_of_all_posts,topic_positive_rate,topic_negative_rate
+2017-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8729,174,0.019933554817275746,0.25862068965517243,0.7413793103448276
+2017-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8040,136,0.01691542288557214,0.19117647058823528,0.8088235294117647
+2017-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8004,142,0.01774112943528236,0.2746478873239437,0.7253521126760564
+2017-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7189,116,0.01613576297120601,0.21551724137931033,0.7844827586206896
+2017-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7305,122,0.016700889801505817,0.26229508196721313,0.7377049180327869
+2017-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7693,119,0.015468607825295723,0.20168067226890757,0.7983193277310925
+2017-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7904,134,0.01695344129554656,0.291044776119403,0.7089552238805971
+2017-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8119,126,0.015519152605000615,0.09523809523809523,0.9047619047619048
+2017-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7748,127,0.016391326794011358,0.1732283464566929,0.8267716535433071
+2017-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8709,142,0.01630497186818234,0.2676056338028169,0.7323943661971831
+2017-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8171,122,0.014930853016766613,0.29508196721311475,0.7049180327868853
+2017-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",6999,111,0.015859408486926702,0.22522522522522523,0.7747747747747747
+2018-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8282,146,0.017628592127505432,0.19863013698630136,0.8013698630136986
+2018-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",7837,136,0.01735357917570499,0.21323529411764705,0.7867647058823529
+2018-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9063,179,0.019750634447754607,0.21787709497206703,0.7821229050279329
+2018-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8898,140,0.01573387278040009,0.21428571428571427,0.7857142857142857
+2018-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9257,143,0.01544776925569839,0.2517482517482518,0.7482517482517482
+2018-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9102,141,0.015491100856954515,0.2695035460992908,0.7304964539007093
+2018-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9040,119,0.013163716814159293,0.15126050420168066,0.8487394957983193
+2018-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9923,147,0.014814068326111055,0.23129251700680273,0.7687074829931972
+2018-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9017,119,0.013197294000221804,0.19327731092436976,0.8067226890756303
+2018-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10619,133,0.012524719841793012,0.18796992481203006,0.8120300751879699
+2018-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9759,147,0.015063018751921304,0.2585034013605442,0.7414965986394558
+2018-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",8845,132,0.014923685698134539,0.30303030303030304,0.696969696969697
+2019-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10569,157,0.014854763932254707,0.20382165605095542,0.7961783439490446
+2019-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",9864,150,0.015206812652068127,0.15333333333333332,0.8466666666666667
+2019-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11056,171,0.01546671490593343,0.22807017543859648,0.7719298245614035
+2019-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10953,167,0.015246964302017711,0.2215568862275449,0.7784431137724551
+2019-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11401,168,0.014735549513200597,0.21428571428571427,0.7857142857142857
+2019-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10804,159,0.014716771566086634,0.27672955974842767,0.7232704402515723
+2019-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11069,164,0.014816153220706478,0.21951219512195122,0.7804878048780488
+2019-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12861,196,0.015239872482699635,0.1989795918367347,0.8010204081632653
+2019-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11400,158,0.013859649122807018,0.2721518987341772,0.7278481012658228
+2019-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12457,150,0.012041422493377217,0.22,0.78
+2019-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11135,131,0.011764705882352941,0.24427480916030533,0.7557251908396947
+2019-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10097,139,0.013766465286718828,0.37410071942446044,0.6258992805755396
+2020-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12317,171,0.01388325079158886,0.2573099415204678,0.7426900584795322
+2020-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12769,186,0.014566528310752605,0.26881720430107525,0.7311827956989247
+2020-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11830,390,0.03296703296703297,0.3230769230769231,0.676923076923077
+2020-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",10293,433,0.042067424463227435,0.2517321016166282,0.7482678983833718
+2020-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12010,334,0.02781015820149875,0.30538922155688625,0.6946107784431138
+2020-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",11347,302,0.02661496430774654,0.2152317880794702,0.7847682119205298
+2020-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13086,360,0.027510316368638238,0.25833333333333336,0.7416666666666667
+2020-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13552,328,0.024203069657615112,0.2347560975609756,0.7652439024390244
+2020-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13522,303,0.022407927821328204,0.24092409240924093,0.759075907590759
+2020-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14336,328,0.022879464285714284,0.20426829268292682,0.7957317073170732
+2020-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12600,258,0.020476190476190478,0.26744186046511625,0.7325581395348837
+2020-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",12752,247,0.019369510664993726,0.19433198380566802,0.805668016194332
+2021-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13670,241,0.017629846378931967,0.1950207468879668,0.8049792531120332
+2021-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13627,293,0.021501430982608056,0.2150170648464164,0.7849829351535836
+2021-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14445,264,0.018276220145379024,0.23106060606060605,0.7689393939393939
+2021-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14273,252,0.01765571358509073,0.2619047619047619,0.7380952380952381
+2021-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14788,252,0.017040843927508792,0.18253968253968253,0.8174603174603174
+2021-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14680,258,0.01757493188010899,0.16279069767441862,0.8372093023255814
+2021-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14888,188,0.01262761955937668,0.2393617021276596,0.7606382978723404
+2021-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16028,185,0.011542300973296732,0.20540540540540542,0.7945945945945946
+2021-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16144,168,0.010406342913776016,0.15476190476190477,0.8452380952380952
+2021-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17078,163,0.009544443143225202,0.25153374233128833,0.7484662576687117
+2021-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16965,175,0.01031535514294135,0.21142857142857144,0.7885714285714286
+2021-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",15373,145,0.009432121251544917,0.2827586206896552,0.7172413793103448
+2022-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17867,193,0.010802037275423965,0.22797927461139897,0.772020725388601
+2022-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16700,147,0.008802395209580838,0.3197278911564626,0.6802721088435374
+2022-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18578,192,0.010334804607600388,0.265625,0.734375
+2022-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16850,169,0.01002967359050445,0.3254437869822485,0.6745562130177515
+2022-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16602,307,0.018491747982170823,0.30293159609120524,0.6970684039087948
+2022-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16563,374,0.022580450401497313,0.24064171122994651,0.7593582887700535
+2022-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16956,348,0.020523708421797595,0.27011494252873564,0.7298850574712644
+2022-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18581,327,0.01759862224853345,0.25688073394495414,0.7431192660550459
+2022-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17167,312,0.018174404380497465,0.22115384615384615,0.7788461538461539
+2022-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18001,354,0.01966557413477029,0.2711864406779661,0.7288135593220338
+2022-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16360,675,0.04125916870415648,0.3377777777777778,0.6622222222222223
+2022-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14420,403,0.02794729542302358,0.29528535980148884,0.7047146401985112
+2023-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16029,615,0.03836795807598727,0.2845528455284553,0.7154471544715447
+2023-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14502,568,0.03916701144669701,0.25880281690140844,0.7411971830985915
+2023-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16521,624,0.03777011076811331,0.28685897435897434,0.7131410256410257
+2023-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",15180,604,0.03978919631093544,0.31125827814569534,0.6887417218543046
+2023-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16090,619,0.038471100062150404,0.25363489499192243,0.7463651050080775
+2023-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",13784,612,0.044399303540336624,0.20098039215686275,0.7990196078431373
+2023-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17379,936,0.05385810460901087,0.21794871794871795,0.782051282051282
+2023-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20377,1243,0.06100014722481229,0.19790828640386163,0.8020917135961384
+2023-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17961,1068,0.05946216803073325,0.21910112359550563,0.7808988764044944
+2023-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",19012,1080,0.056806227645697455,0.19537037037037036,0.8046296296296296
+2023-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18051,1112,0.061603235277823944,0.20323741007194246,0.7967625899280576
+2023-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16704,1063,0.0636374521072797,0.19379115710253997,0.80620884289746
+2024-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",21876,1488,0.06801974766867801,0.2217741935483871,0.7782258064516129
+2024-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20704,1452,0.07013137557959814,0.2100550964187328,0.7899449035812672
+2024-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",21377,1372,0.06418112925106423,0.1967930029154519,0.8032069970845481
+2024-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20606,1189,0.05770164029894206,0.22624053826745164,0.7737594617325484
+2024-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20097,1429,0.07110514007065731,0.20503848845346395,0.794961511546536
+2024-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18782,1109,0.05904589500585667,0.21190261496844004,0.78809738503156
+2024-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18922,1206,0.06373533453123348,0.2023217247097844,0.7976782752902156
+2024-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20817,1448,0.0695585338905702,0.19958563535911603,0.800414364640884
+2024-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20235,1236,0.06108228317272053,0.18770226537216828,0.8122977346278317
+2024-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",21105,1220,0.0578062070599384,0.22295081967213115,0.7770491803278688
+2024-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18303,1100,0.060099437250723926,0.24181818181818182,0.7581818181818182
+2024-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16670,1050,0.0629874025194961,0.22952380952380952,0.7704761904761904
+2025-01,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18594,1200,0.06453694740238787,0.22583333333333333,0.7741666666666667
+2025-02,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",17847,1252,0.07015184624866924,0.21006389776357828,0.7899361022364217
+2025-03,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",20556,1376,0.06693909320879549,0.19840116279069767,0.8015988372093024
+2025-04,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18080,1257,0.06952433628318584,0.19729514717581542,0.8027048528241846
+2025-05,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18591,1360,0.07315367651013932,0.2139705882352941,0.7860294117647059
+2025-06,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18193,1193,0.06557467157698016,0.2347024308466052,0.7652975691533948
+2025-07,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",19902,1332,0.06692794694000603,0.22897897897897898,0.771021021021021
+2025-08,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",19416,1218,0.06273176761433868,0.20607553366174056,0.7939244663382594
+2025-09,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18363,1061,0.05777922997331591,0.2054665409990575,0.7945334590009425
+2025-10,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",18377,1198,0.06519018338140066,0.20617696160267113,0.7938230383973289
+2025-11,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",16892,1102,0.06523798247691215,0.2159709618874773,0.7840290381125227
+2025-12,layoffs_market,"Layoffs, market contraction, hiring freezes, severance, and related market stress.",14982,912,0.06087304765718863,0.1875,0.8125
+2017-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8729,3159,0.3618971245274373,0.4656536878759101,0.5343463121240899
+2017-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8040,3109,0.38669154228855723,0.47507237053715023,0.5249276294628498
+2017-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8004,3274,0.4090454772613693,0.47251069028711057,0.5274893097128894
+2017-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7189,2889,0.40186395882598414,0.4565593631014192,0.5434406368985808
+2017-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7305,2946,0.40328542094455855,0.4304141208418194,0.5695858791581806
+2017-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7693,2944,0.38268555829975304,0.4517663043478261,0.548233695652174
+2017-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7904,2976,0.3765182186234818,0.44455645161290325,0.5554435483870968
+2017-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8119,3249,0.40017243502894445,0.44475223145583254,0.5552477685441675
+2017-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7748,3136,0.40474961280330407,0.4658801020408163,0.5341198979591837
+2017-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8709,3792,0.43541164312779884,0.49050632911392406,0.509493670886076
+2017-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8171,3359,0.411087994125566,0.4918130395951176,0.5081869604048824
+2017-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",6999,2757,0.3939134162023146,0.4816829887558941,0.5183170112441059
+2018-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8282,3393,0.40968365129195844,0.4833480695549661,0.5166519304450339
+2018-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",7837,3308,0.42210029347964784,0.44316807738814995,0.5568319226118501
+2018-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9063,3994,0.4406929272867704,0.4586880320480721,0.5413119679519279
+2018-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8898,3585,0.40289952798381656,0.45495118549511854,0.5450488145048814
+2018-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9257,3834,0.4141730582262072,0.4457485654668753,0.5542514345331246
+2018-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9102,3531,0.3879367172050099,0.46247521948456527,0.5375247805154347
+2018-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9040,3455,0.3821902654867257,0.4654124457308249,0.5345875542691751
+2018-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9923,4098,0.4129799455809735,0.4572962420693021,0.5427037579306979
+2018-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9017,3710,0.4114450482422092,0.47816711590296496,0.521832884097035
+2018-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10619,4350,0.4096430925699218,0.5105747126436782,0.48942528735632185
+2018-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9759,3932,0.40291013423506505,0.5027975584944049,0.4972024415055951
+2018-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",8845,3242,0.36653476540418317,0.4836520666255398,0.5163479333744602
+2019-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10569,3991,0.37761377613776137,0.4793284891004761,0.5206715108995239
+2019-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",9864,3996,0.4051094890510949,0.48873873873873874,0.5112612612612613
+2019-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11056,4227,0.38232633863965265,0.47740714454696004,0.52259285545304
+2019-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10953,4450,0.40628138409568154,0.46808988764044945,0.5319101123595505
+2019-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11401,4646,0.4075081133233927,0.4418854928971158,0.5581145071028842
+2019-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10804,4322,0.40003702332469454,0.44979176307265156,0.5502082369273484
+2019-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11069,4587,0.4144005781913452,0.44931327665140613,0.5506867233485938
+2019-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12861,5089,0.3956924033900941,0.4560817449400668,0.5439182550599332
+2019-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11400,4546,0.3987719298245614,0.5140783106027277,0.4859216893972723
+2019-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12457,5259,0.42217227261780527,0.5143563415097927,0.48564365849020724
+2019-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11135,4679,0.42020655590480466,0.5334473178029493,0.46655268219705065
+2019-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10097,4062,0.4022977121917401,0.5494830132939439,0.4505169867060561
+2020-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12317,4771,0.38735081594544124,0.5158247746803605,0.48417522531963947
+2020-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12769,4821,0.37755501605450703,0.5038373781373159,0.4961626218626841
+2020-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11830,4118,0.34809805579036346,0.5048567265662943,0.4951432734337057
+2020-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",10293,3438,0.3340134071699213,0.4781849912739965,0.5218150087260035
+2020-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12010,3652,0.30407993338884265,0.5391566265060241,0.4608433734939759
+2020-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",11347,3730,0.32872124790693574,0.5142091152815014,0.4857908847184987
+2020-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13086,4550,0.34769983188139997,0.5070329670329671,0.492967032967033
+2020-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13552,5259,0.3880608028335301,0.5145464917284654,0.4854535082715345
+2020-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13522,5885,0.4352166839224967,0.5228547153780798,0.47714528462192013
+2020-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14336,6454,0.4501953125,0.5432290052680508,0.45677099473194915
+2020-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12600,5652,0.44857142857142857,0.5516631280962491,0.4483368719037509
+2020-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",12752,5468,0.4287954830614806,0.5256035113386979,0.47439648866130213
+2021-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13670,5794,0.4238478419897586,0.5084570245081118,0.49154297549188813
+2021-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13627,6023,0.44199016658105234,0.49410592727876473,0.5058940727212352
+2021-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14445,6203,0.42942194530979577,0.4794454296308238,0.5205545703691762
+2021-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14273,6091,0.4267498073285224,0.46527663766212446,0.5347233623378755
+2021-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14788,6146,0.41560724912090885,0.46208916368369674,0.5379108363163033
+2021-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14680,6351,0.4326294277929155,0.43300267674381987,0.5669973232561801
+2021-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14888,5733,0.3850752283718431,0.48473748473748474,0.5152625152625152
+2021-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16028,6222,0.3881956575992014,0.4971070395371263,0.5028929604628737
+2021-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16144,5533,0.3427279484638256,0.4648472799566239,0.5351527200433761
+2021-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17078,5731,0.33557793652652534,0.4828127726400279,0.5171872273599721
+2021-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16965,6186,0.36463306808134394,0.5048496605237633,0.49515033947623666
+2021-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",15373,5492,0.35724972354127366,0.4989075018208303,0.5010924981791697
+2022-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17867,6423,0.35948956176190744,0.5126887747158648,0.4873112252841351
+2022-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16700,6125,0.36676646706586824,0.5155918367346939,0.4844081632653061
+2022-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18578,7327,0.3943912154160835,0.5212228743005323,0.47877712569946773
+2022-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16850,6342,0.376379821958457,0.5081993062125513,0.49180069378744873
+2022-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16602,6322,0.38079749427779785,0.475324264473268,0.5246757355267321
+2022-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16563,6191,0.3737849423413633,0.4768211920529801,0.5231788079470199
+2022-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16956,6536,0.3854682708185893,0.4851591187270502,0.5148408812729498
+2022-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18581,7306,0.3931973521339002,0.49657815494114427,0.5034218450588558
+2022-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17167,6837,0.3982641113764781,0.5247915752523037,0.47520842474769637
+2022-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18001,7468,0.414865840786623,0.5502142474558115,0.4497857525441885
+2022-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16360,6321,0.38636919315403423,0.5464325264989717,0.45356747350102833
+2022-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14420,5222,0.36213592233009706,0.5068939103791651,0.4931060896208349
+2023-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16029,5931,0.3700168444693992,0.49637497892429605,0.503625021075704
+2023-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14502,5411,0.3731209488346435,0.4797634448345962,0.5202365551654038
+2023-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16521,6314,0.38218025543247985,0.47355083940449794,0.5264491605955021
+2023-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",15180,5572,0.36706192358366274,0.4752333094041637,0.5247666905958364
+2023-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16090,6042,0.37551274083281544,0.46309169149288315,0.5369083085071168
+2023-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",13784,6146,0.4458792803250145,0.4219004230393752,0.5780995769606248
+2023-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17379,8246,0.4744806950917774,0.37982051903953434,0.6201794809604657
+2023-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20377,9988,0.49016047504539434,0.3792551061273528,0.6207448938726472
+2023-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17961,8884,0.494627247926062,0.40173345339936967,0.5982665466006304
+2023-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",19012,9517,0.5005785819482432,0.4156772092045813,0.5843227907954187
+2023-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18051,8933,0.49487563015899394,0.4155378932049703,0.5844621067950296
+2023-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16704,7871,0.47120450191570884,0.39588362342777283,0.6041163765722272
+2024-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",21876,10071,0.4603675260559517,0.40988978254393804,0.590110217456062
+2024-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20704,9813,0.4739663833075734,0.39722816671761946,0.6027718332823805
+2024-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",21377,9817,0.45923188473593113,0.40664154018539267,0.5933584598146073
+2024-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20606,9270,0.44986897020285355,0.394066882416397,0.605933117583603
+2024-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20097,9440,0.4697218490321939,0.36292372881355933,0.6370762711864407
+2024-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18782,8477,0.45133638590139497,0.37135779167158195,0.6286422083284181
+2024-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18922,9053,0.47843779727301555,0.3716999889539379,0.628300011046062
+2024-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20817,9940,0.4774943555747706,0.37253521126760564,0.6274647887323944
+2024-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20235,9780,0.48332097850259453,0.39335378323108383,0.6066462167689162
+2024-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",21105,10382,0.4919213456526889,0.4348873049508765,0.5651126950491235
+2024-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18303,8892,0.4858219963940338,0.4381466486729645,0.5618533513270355
+2024-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16670,7556,0.45326934613077385,0.434356802541027,0.565643197458973
+2025-01,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18594,8778,0.47208777024846726,0.4269765322396901,0.5730234677603099
+2025-02,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",17847,8412,0.4713397209615061,0.4148834997622444,0.5851165002377556
+2025-03,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",20556,9845,0.4789355905818253,0.4060944641950229,0.5939055358049772
+2025-04,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18080,8630,0.47732300884955753,0.38783314020857473,0.6121668597914253
+2025-05,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18591,8659,0.46576300360389433,0.39034530546252455,0.6096546945374755
+2025-06,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18193,8005,0.44000439729566315,0.3977514053716427,0.6022485946283572
+2025-07,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",19902,8370,0.4205607476635514,0.3946236559139785,0.6053763440860215
+2025-08,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",19416,7982,0.41110424392253814,0.4171886745176647,0.5828113254823353
+2025-09,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18363,8059,0.4388716440668736,0.4346693138106465,0.5653306861893536
+2025-10,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",18377,8768,0.47711813680143655,0.44765054744525545,0.5523494525547445
+2025-11,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",16892,7626,0.45145631067961167,0.46485706792551795,0.535142932074482
+2025-12,recruiting_pipeline,"Recruiting process, interviews, offers, rejections, applications, and internship/new-grad pipeline.",14982,6992,0.46669336537177947,0.42934782608695654,0.5706521739130435
+2017-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8729,970,0.11112384007331882,0.3185567010309278,0.6814432989690722
+2017-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8040,865,0.10758706467661691,0.30057803468208094,0.6994219653179191
+2017-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8004,968,0.12093953023488256,0.3181818181818182,0.6818181818181818
+2017-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7189,914,0.12713868410070941,0.2899343544857768,0.7100656455142232
+2017-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7305,958,0.13114305270362767,0.27139874739039666,0.7286012526096033
+2017-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7693,972,0.1263486286234239,0.2932098765432099,0.7067901234567902
+2017-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7904,1080,0.13663967611336034,0.31296296296296294,0.687037037037037
+2017-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8119,1041,0.12821776080798128,0.2910662824207493,0.7089337175792507
+2017-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7748,974,0.12570986060918946,0.3326488706365503,0.6673511293634496
+2017-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8709,1070,0.12286140773912045,0.32710280373831774,0.6728971962616822
+2017-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8171,1070,0.13095092399951047,0.34953271028037386,0.6504672897196262
+2017-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",6999,908,0.12973281897413916,0.32158590308370044,0.6784140969162996
+2018-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8282,1015,0.12255493842067133,0.3221674876847291,0.677832512315271
+2018-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",7837,981,0.12517544978946024,0.2874617737003058,0.7125382262996942
+2018-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9063,1239,0.13670969877523997,0.29539951573849876,0.7046004842615012
+2018-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8898,1094,0.12294897729826927,0.29981718464351004,0.70018281535649
+2018-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9257,1172,0.12660689208166792,0.31399317406143346,0.6860068259385665
+2018-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9102,1073,0.11788617886178862,0.2907735321528425,0.7092264678471575
+2018-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9040,1133,0.12533185840707964,0.29567519858781993,0.70432480141218
+2018-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9923,1321,0.1331250629849844,0.31642694928084786,0.6835730507191522
+2018-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9017,1073,0.11899744926250416,0.315004659832246,0.684995340167754
+2018-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10619,1298,0.12223373198982955,0.33975346687211094,0.6602465331278891
+2018-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9759,1230,0.1260375038426068,0.35853658536585364,0.6414634146341464
+2018-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",8845,1057,0.11950254381006219,0.336802270577105,0.663197729422895
+2019-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10569,1289,0.1219604503737345,0.29712955779674166,0.7028704422032583
+2019-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",9864,1252,0.12692619626926196,0.32987220447284343,0.6701277955271565
+2019-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11056,1323,0.11966353111432707,0.3340891912320484,0.6659108087679516
+2019-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10953,1395,0.12736236647493837,0.3240143369175627,0.6759856630824372
+2019-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11401,1429,0.1253398824664503,0.271518544436669,0.728481455563331
+2019-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10804,1320,0.12217697149203999,0.28939393939393937,0.7106060606060606
+2019-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11069,1457,0.13162887343030083,0.29375428963623884,0.7062457103637612
+2019-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12861,2666,0.20729336754529196,0.25318829707426854,0.7468117029257314
+2019-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11400,1295,0.11359649122807018,0.3127413127413127,0.6872586872586872
+2019-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12457,1321,0.10604479409167536,0.35654806964420893,0.6434519303557911
+2019-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11135,1224,0.1099236641221374,0.3872549019607843,0.6127450980392157
+2019-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10097,948,0.09388927404179459,0.39135021097046413,0.6086497890295358
+2020-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12317,1281,0.10400259803523586,0.3473848555815769,0.652615144418423
+2020-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12769,1246,0.09758007674837497,0.32504012841091495,0.6749598715890851
+2020-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11830,1056,0.08926458157227388,0.34375,0.65625
+2020-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",10293,956,0.09287865539687166,0.32112970711297073,0.6788702928870293
+2020-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12010,931,0.07751873438800999,0.3523093447905478,0.6476906552094522
+2020-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",11347,1079,0.0950912135366176,0.32808155699721964,0.6719184430027804
+2020-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13086,1162,0.08879718783432676,0.3278829604130809,0.6721170395869192
+2020-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13552,1226,0.09046635182998819,0.3433931484502447,0.6566068515497553
+2020-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13522,1350,0.09983730217423457,0.30814814814814817,0.6918518518518518
+2020-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14336,1368,0.09542410714285714,0.3391812865497076,0.6608187134502924
+2020-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12600,1333,0.10579365079365079,0.3810952738184546,0.6189047261815454
+2020-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",12752,1340,0.10508155583437892,0.3611940298507463,0.6388059701492538
+2021-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13670,1452,0.10621799561082662,0.29545454545454547,0.7045454545454546
+2021-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13627,1512,0.1109561899170764,0.33796296296296297,0.6620370370370371
+2021-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14445,1717,0.11886465905157494,0.30576587070471756,0.6942341292952825
+2021-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14273,1916,0.13423947313108667,0.3246346555323591,0.675365344467641
+2021-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14788,1927,0.13030835812821207,0.3175921120913337,0.6824078879086664
+2021-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14680,2076,0.14141689373297003,0.29672447013487474,0.7032755298651252
+2021-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14888,1664,0.11176786673831274,0.31009615384615385,0.6899038461538461
+2021-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16028,1782,0.11118043424007985,0.3226711560044893,0.6773288439955106
+2021-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16144,1665,0.10313429137760159,0.3153153153153153,0.6846846846846847
+2021-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17078,1706,0.09989460124136315,0.3007033997655334,0.6992966002344666
+2021-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16965,1929,0.11370468611847923,0.36599274235355106,0.6340072576464489
+2021-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",15373,1741,0.11325050413061861,0.37507179781734634,0.6249282021826537
+2022-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17867,1966,0.11003526053618402,0.35249237029501523,0.6475076297049848
+2022-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16700,1893,0.11335329341317366,0.37665081880612783,0.6233491811938722
+2022-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18578,2129,0.11459791150823555,0.3555659934241428,0.6444340065758573
+2022-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16850,2037,0.12089020771513354,0.38438880706921946,0.6156111929307806
+2022-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16602,2024,0.12191302252740634,0.3423913043478261,0.657608695652174
+2022-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16563,2077,0.12539998792489285,0.35098700048146364,0.6490129995185363
+2022-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16956,1880,0.1108752064166077,0.32393617021276594,0.676063829787234
+2022-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18581,2042,0.10989720682417524,0.34476003917727716,0.6552399608227228
+2022-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17167,1781,0.10374555833867304,0.38124649073554184,0.6187535092644582
+2022-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18001,1548,0.08599522248763958,0.4218346253229974,0.5781653746770026
+2022-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16360,1559,0.09529339853300733,0.45221295702373315,0.5477870429762668
+2022-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14420,1477,0.10242718446601942,0.37373053486797564,0.6262694651320244
+2023-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16029,1760,0.10980098571339447,0.3352272727272727,0.6647727272727273
+2023-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14502,1569,0.10819197352089367,0.325685149776928,0.674314850223072
+2023-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16521,1878,0.11367350644634103,0.3450479233226837,0.6549520766773163
+2023-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",15180,1625,0.10704874835309618,0.34523076923076923,0.6547692307692308
+2023-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16090,1757,0.10919825978868862,0.30563460443938534,0.6943653955606147
+2023-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",13784,1797,0.13036854323853744,0.2860322760155815,0.7139677239844184
+2023-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17379,2743,0.1578341676736291,0.23915421071819176,0.7608457892818082
+2023-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20377,3164,0.15527310202679492,0.24873577749683945,0.7512642225031606
+2023-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17961,2686,0.14954623907354825,0.2457185405807893,0.7542814594192108
+2023-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",19012,2884,0.15169366715758467,0.2617891816920943,0.7382108183079057
+2023-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18051,2825,0.1565010248739682,0.272212389380531,0.7277876106194691
+2023-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16704,2635,0.15774664750957854,0.25161290322580643,0.7483870967741936
+2024-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",21876,3196,0.14609617846041323,0.2600125156445557,0.7399874843554443
+2024-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20704,3074,0.14847372488408037,0.2612231620039037,0.7387768379960963
+2024-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",21377,2802,0.13107545492819386,0.26802284082798,0.73197715917202
+2024-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20606,2666,0.12937979229350674,0.26106526631657917,0.7389347336834209
+2024-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20097,3167,0.15758570930984725,0.23018629617934955,0.7698137038206505
+2024-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18782,2684,0.14290277925673517,0.235096870342772,0.7649031296572281
+2024-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18922,2615,0.13819892188986366,0.22294455066921606,0.777055449330784
+2024-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20817,2983,0.14329634433395783,0.2236004022795843,0.7763995977204157
+2024-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20235,2751,0.13595255744996293,0.24027626317702652,0.7597237368229734
+2024-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",21105,2630,0.1246150201374082,0.26045627376425856,0.7395437262357415
+2024-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18303,2213,0.12090914057804732,0.2833258020786263,0.7166741979213737
+2024-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16670,2252,0.13509298140371925,0.27708703374777977,0.7229129662522202
+2025-01,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18594,2371,0.12751425190921803,0.26739772247996624,0.7326022775200337
+2025-02,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",17847,2207,0.12366224015240657,0.2827367467149977,0.7172632532850023
+2025-03,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",20556,2604,0.12667834208990075,0.24308755760368664,0.7569124423963134
+2025-04,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18080,2310,0.1277654867256637,0.2528138528138528,0.7471861471861472
+2025-05,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18591,2399,0.12904093378516487,0.2551062942892872,0.7448937057107128
+2025-06,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18193,2207,0.12131039410762381,0.2736746714997734,0.7263253285002266
+2025-07,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",19902,2281,0.11461159682443975,0.27093380096448927,0.7290661990355107
+2025-08,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",19416,2121,0.1092398022249691,0.2923149457802923,0.7076850542197077
+2025-09,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18363,1998,0.10880575069433099,0.29179179179179177,0.7082082082082082
+2025-10,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",18377,1981,0.1077977907166567,0.276123170116103,0.723876829883897
+2025-11,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",16892,1936,0.11461046649301444,0.31663223140495866,0.6833677685950413
+2025-12,compensation,"Salary, total compensation, equity, RSUs, negotiation, and pay discussions.",14982,1763,0.11767454278467494,0.2955190017016449,0.7044809982983551
+2017-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8729,164,0.01878794821858174,0.36585365853658536,0.6341463414634146
+2017-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8040,198,0.024626865671641792,0.3686868686868687,0.6313131313131313
+2017-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8004,180,0.022488755622188907,0.37222222222222223,0.6277777777777778
+2017-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7189,184,0.025594658506050912,0.29347826086956524,0.7065217391304348
+2017-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7305,179,0.024503764544832305,0.3016759776536313,0.6983240223463687
+2017-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7693,176,0.02287794098531132,0.2556818181818182,0.7443181818181818
+2017-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7904,178,0.022520242914979758,0.2696629213483146,0.7303370786516854
+2017-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8119,195,0.024017736174405713,0.3384615384615385,0.6615384615384615
+2017-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7748,190,0.024522457408363448,0.35789473684210527,0.6421052631578947
+2017-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8709,251,0.028820760133195546,0.3386454183266932,0.6613545816733067
+2017-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8171,216,0.026434952882144168,0.38425925925925924,0.6157407407407407
+2017-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",6999,170,0.024289184169167023,0.35294117647058826,0.6470588235294118
+2018-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8282,226,0.02728809466312485,0.3893805309734513,0.6106194690265486
+2018-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",7837,193,0.02462677044787546,0.3316062176165803,0.6683937823834197
+2018-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9063,249,0.027474346242965905,0.3373493975903614,0.6626506024096386
+2018-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8898,244,0.027421892560125873,0.29508196721311475,0.7049180327868853
+2018-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9257,230,0.024846062439235175,0.3347826086956522,0.6652173913043479
+2018-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9102,193,0.02120413096022852,0.34196891191709844,0.6580310880829016
+2018-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9040,181,0.02002212389380531,0.3149171270718232,0.6850828729281768
+2018-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9923,274,0.027612617152070945,0.33941605839416056,0.6605839416058394
+2018-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9017,251,0.02783630919374515,0.3745019920318725,0.6254980079681275
+2018-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10619,291,0.0274037103305396,0.3951890034364261,0.6048109965635738
+2018-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9759,296,0.030330976534480993,0.3614864864864865,0.6385135135135135
+2018-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",8845,228,0.02577727529677784,0.3991228070175439,0.6008771929824561
+2019-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10569,277,0.026208723625697795,0.3898916967509025,0.6101083032490975
+2019-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",9864,285,0.02889294403892944,0.3508771929824561,0.6491228070175439
+2019-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11056,287,0.025958755426917512,0.3693379790940767,0.6306620209059234
+2019-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10953,287,0.026202866794485528,0.3588850174216028,0.6411149825783972
+2019-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11401,335,0.029383387422155953,0.2865671641791045,0.7134328358208956
+2019-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10804,297,0.027489818585708998,0.3063973063973064,0.6936026936026936
+2019-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11069,309,0.0279158008853555,0.3106796116504854,0.6893203883495146
+2019-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12861,330,0.025658968975973875,0.4121212121212121,0.5878787878787879
+2019-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11400,305,0.02675438596491228,0.419672131147541,0.580327868852459
+2019-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12457,414,0.03323432608172112,0.4855072463768116,0.5144927536231884
+2019-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11135,322,0.028917826672653794,0.41304347826086957,0.5869565217391305
+2019-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10097,292,0.028919481033970486,0.3904109589041096,0.6095890410958904
+2020-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12317,340,0.027604124380936918,0.36470588235294116,0.6352941176470588
+2020-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12769,349,0.027331819249745478,0.40974212034383956,0.5902578796561605
+2020-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11830,445,0.03761622992392223,0.3258426966292135,0.6741573033707865
+2020-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",10293,493,0.047896628776838625,0.2961460446247465,0.7038539553752535
+2020-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12010,437,0.03638634471273938,0.4073226544622426,0.5926773455377574
+2020-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",11347,434,0.03824799506477483,0.2857142857142857,0.7142857142857143
+2020-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13086,473,0.03614549900657191,0.3171247357293869,0.6828752642706131
+2020-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13552,426,0.0314344746162928,0.31220657276995306,0.687793427230047
+2020-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13522,482,0.03564561455406005,0.3360995850622407,0.6639004149377593
+2020-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14336,534,0.03724888392857143,0.34831460674157305,0.651685393258427
+2020-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12600,505,0.04007936507936508,0.36633663366336633,0.6336633663366337
+2020-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",12752,441,0.03458281053952321,0.34467120181405897,0.655328798185941
+2021-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13670,519,0.037966349670812,0.3352601156069364,0.6647398843930635
+2021-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13627,516,0.03786600132090702,0.312015503875969,0.687984496124031
+2021-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14445,580,0.040152301834544823,0.30689655172413793,0.6931034482758621
+2021-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14273,608,0.04259791214180621,0.2582236842105263,0.7417763157894737
+2021-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14788,721,0.04875574790370571,0.3120665742024965,0.6879334257975035
+2021-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14680,792,0.05395095367847411,0.28535353535353536,0.7146464646464646
+2021-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14888,626,0.042047286405158514,0.2827476038338658,0.7172523961661342
+2021-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16028,695,0.043361617169952585,0.29640287769784174,0.7035971223021583
+2021-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16144,634,0.03927155599603568,0.3359621451104101,0.6640378548895899
+2021-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17078,610,0.03571846820470781,0.3,0.7
+2021-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16965,774,0.04562334217506631,0.32299741602067183,0.6770025839793282
+2021-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",15373,705,0.04585962401613218,0.35319148936170214,0.6468085106382979
+2022-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17867,870,0.048693121396988864,0.3195402298850575,0.6804597701149425
+2022-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16700,784,0.04694610778443114,0.34311224489795916,0.6568877551020408
+2022-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18578,987,0.05312735493594574,0.3454913880445795,0.6545086119554204
+2022-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16850,878,0.052106824925816024,0.2972665148063781,0.7027334851936219
+2022-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16602,922,0.055535477653294786,0.306941431670282,0.693058568329718
+2022-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16563,955,0.05765863672040089,0.32146596858638743,0.6785340314136126
+2022-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16956,935,0.05514272234017457,0.30802139037433157,0.6919786096256685
+2022-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18581,995,0.05354932457887089,0.33768844221105526,0.6623115577889447
+2022-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17167,771,0.04491174928642162,0.3450064850843061,0.6549935149156939
+2022-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18001,750,0.04166435198044553,0.3506666666666667,0.6493333333333333
+2022-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16360,712,0.04352078239608802,0.35814606741573035,0.6418539325842697
+2022-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14420,684,0.047434119278779475,0.32748538011695905,0.672514619883041
+2023-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16029,841,0.05246740283236634,0.31391200951248516,0.6860879904875149
+2023-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14502,841,0.057992001103296095,0.3162901307966706,0.6837098692033293
+2023-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16521,901,0.054536650323830274,0.3074361820199778,0.6925638179800222
+2023-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",15180,773,0.050922266139657446,0.2703751617076326,0.7296248382923674
+2023-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16090,900,0.05593536357986327,0.28555555555555556,0.7144444444444444
+2023-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",13784,817,0.05927161926871735,0.2582619339045288,0.7417380660954712
+2023-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17379,1179,0.06784049715173485,0.2561492790500424,0.7438507209499576
+2023-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20377,1361,0.06679098984148796,0.24540778839088906,0.7545922116091109
+2023-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17961,1129,0.0628584154557096,0.26926483613817537,0.7307351638618246
+2023-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",19012,1261,0.0663265306122449,0.24900872323552736,0.7509912767644726
+2023-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18051,1151,0.06376378039997783,0.2684622067767159,0.731537793223284
+2023-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16704,1084,0.06489463601532568,0.27121771217712176,0.7287822878228782
+2024-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",21876,1308,0.05979155238617663,0.2652905198776758,0.7347094801223242
+2024-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20704,1262,0.06095440494590417,0.2480190174326466,0.7519809825673535
+2024-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",21377,1158,0.05417037002385742,0.24438687392055267,0.7556131260794473
+2024-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20606,1137,0.05517810346501019,0.23834652594547054,0.7616534740545294
+2024-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20097,1290,0.06418868487834005,0.24108527131782945,0.7589147286821706
+2024-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18782,1139,0.06064316899158769,0.2467076382791923,0.7532923617208077
+2024-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18922,1112,0.05876757213825177,0.2383093525179856,0.7616906474820144
+2024-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20817,1295,0.06220877167699476,0.2694980694980695,0.7305019305019305
+2024-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20235,1242,0.06137879911045219,0.28180354267310787,0.7181964573268921
+2024-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",21105,1203,0.05700071073205402,0.30756442227763925,0.6924355777223608
+2024-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18303,939,0.05130306507129979,0.30990415335463256,0.6900958466453674
+2024-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16670,883,0.05296940611877624,0.3057757644394111,0.6942242355605889
+2025-01,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18594,1039,0.055878240292567494,0.3262752646775746,0.6737247353224254
+2025-02,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",17847,982,0.055023253207822045,0.29022403258655805,0.709775967413442
+2025-03,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",20556,1101,0.053561004086398134,0.28610354223433243,0.7138964577656676
+2025-04,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18080,1105,0.06111725663716814,0.302262443438914,0.6977375565610859
+2025-05,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18591,1125,0.06051315152493142,0.32622222222222225,0.6737777777777778
+2025-06,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18193,1020,0.05606551970538119,0.31470588235294117,0.6852941176470588
+2025-07,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",19902,1114,0.055974273942317354,0.3473967684021544,0.6526032315978456
+2025-08,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",19416,1046,0.05387309435517099,0.3489483747609943,0.6510516252390057
+2025-09,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18363,1091,0.05941294995371127,0.36480293308890926,0.6351970669110908
+2025-10,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",18377,1065,0.05795287587745551,0.3530516431924883,0.6469483568075117
+2025-11,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",16892,906,0.05363485673691688,0.39183222958057395,0.608167770419426
+2025-12,work_mode,"Remote work, hybrid work, return-to-office, and work-location mode.",14982,809,0.0539981310906421,0.3572311495673671,0.6427688504326329
+2017-01,companies,Specific companies frequently discussed in CS job-market conversations.,8729,346,0.039637988314812696,0.5635838150289018,0.43641618497109824
+2017-02,companies,Specific companies frequently discussed in CS job-market conversations.,8040,316,0.039303482587064675,0.5727848101265823,0.4272151898734177
+2017-03,companies,Specific companies frequently discussed in CS job-market conversations.,8004,281,0.03510744627686157,0.5658362989323843,0.43416370106761565
+2017-04,companies,Specific companies frequently discussed in CS job-market conversations.,7189,241,0.03352343858672972,0.5145228215767634,0.4854771784232365
+2017-05,companies,Specific companies frequently discussed in CS job-market conversations.,7305,215,0.02943189596167009,0.5534883720930233,0.44651162790697674
+2017-06,companies,Specific companies frequently discussed in CS job-market conversations.,7693,231,0.03002729754322111,0.5367965367965368,0.46320346320346323
+2017-07,companies,Specific companies frequently discussed in CS job-market conversations.,7904,254,0.03213562753036437,0.5433070866141733,0.4566929133858268
+2017-08,companies,Specific companies frequently discussed in CS job-market conversations.,8119,260,0.032023648232540954,0.5307692307692308,0.46923076923076923
+2017-09,companies,Specific companies frequently discussed in CS job-market conversations.,7748,279,0.036009292720702114,0.6236559139784946,0.3763440860215054
+2017-10,companies,Specific companies frequently discussed in CS job-market conversations.,8709,392,0.045010908255827306,0.5943877551020408,0.40561224489795916
+2017-11,companies,Specific companies frequently discussed in CS job-market conversations.,8171,321,0.03928527719985314,0.6230529595015576,0.37694704049844235
+2017-12,companies,Specific companies frequently discussed in CS job-market conversations.,6999,263,0.03757679668524075,0.6007604562737643,0.39923954372623577
+2018-01,companies,Specific companies frequently discussed in CS job-market conversations.,8282,281,0.0339290026563632,0.6014234875444839,0.398576512455516
+2018-02,companies,Specific companies frequently discussed in CS job-market conversations.,7837,245,0.031261962485645015,0.5469387755102041,0.4530612244897959
+2018-03,companies,Specific companies frequently discussed in CS job-market conversations.,9063,282,0.031115524660708375,0.5780141843971631,0.4219858156028369
+2018-04,companies,Specific companies frequently discussed in CS job-market conversations.,8898,274,0.030793436727354462,0.5875912408759124,0.4124087591240876
+2018-05,companies,Specific companies frequently discussed in CS job-market conversations.,9257,261,0.028194879550610348,0.5287356321839081,0.47126436781609193
+2018-06,companies,Specific companies frequently discussed in CS job-market conversations.,9102,236,0.025928367391782024,0.5211864406779662,0.4788135593220339
+2018-07,companies,Specific companies frequently discussed in CS job-market conversations.,9040,257,0.02842920353982301,0.5797665369649806,0.42023346303501946
+2018-08,companies,Specific companies frequently discussed in CS job-market conversations.,9923,301,0.030333568477275016,0.5249169435215947,0.4750830564784053
+2018-09,companies,Specific companies frequently discussed in CS job-market conversations.,9017,281,0.03116335810136409,0.5693950177935944,0.4306049822064057
+2018-10,companies,Specific companies frequently discussed in CS job-market conversations.,10619,450,0.04237687164516433,0.64,0.36
+2018-11,companies,Specific companies frequently discussed in CS job-market conversations.,9759,432,0.044266830617891176,0.625,0.375
+2018-12,companies,Specific companies frequently discussed in CS job-market conversations.,8845,363,0.041040135669869984,0.6556473829201102,0.3443526170798898
+2019-01,companies,Specific companies frequently discussed in CS job-market conversations.,10569,375,0.03548112404200965,0.5653333333333334,0.43466666666666665
+2019-02,companies,Specific companies frequently discussed in CS job-market conversations.,9864,367,0.03720600162206002,0.5667574931880109,0.4332425068119891
+2019-03,companies,Specific companies frequently discussed in CS job-market conversations.,11056,380,0.034370477568740954,0.5947368421052631,0.4052631578947368
+2019-04,companies,Specific companies frequently discussed in CS job-market conversations.,10953,355,0.03241121154021729,0.5577464788732395,0.4422535211267606
+2019-05,companies,Specific companies frequently discussed in CS job-market conversations.,11401,350,0.030699061485834577,0.5142857142857142,0.4857142857142857
+2019-06,companies,Specific companies frequently discussed in CS job-market conversations.,10804,303,0.02804516845612736,0.5577557755775577,0.44224422442244227
+2019-07,companies,Specific companies frequently discussed in CS job-market conversations.,11069,351,0.03171018158821935,0.5441595441595442,0.45584045584045585
+2019-08,companies,Specific companies frequently discussed in CS job-market conversations.,12861,442,0.03436746753751652,0.5746606334841629,0.4253393665158371
+2019-09,companies,Specific companies frequently discussed in CS job-market conversations.,11400,437,0.03833333333333333,0.6567505720823799,0.34324942791762014
+2019-10,companies,Specific companies frequently discussed in CS job-market conversations.,12457,642,0.05153728827165449,0.6464174454828661,0.35358255451713394
+2019-11,companies,Specific companies frequently discussed in CS job-market conversations.,11135,755,0.06780422092501123,0.6635761589403973,0.33642384105960266
+2019-12,companies,Specific companies frequently discussed in CS job-market conversations.,10097,612,0.060612062989006635,0.684640522875817,0.315359477124183
+2020-01,companies,Specific companies frequently discussed in CS job-market conversations.,12317,559,0.04538442802630511,0.6529516994633273,0.3470483005366726
+2020-02,companies,Specific companies frequently discussed in CS job-market conversations.,12769,428,0.03351867804839846,0.6238317757009346,0.37616822429906543
+2020-03,companies,Specific companies frequently discussed in CS job-market conversations.,11830,417,0.03524936601859679,0.6115107913669064,0.38848920863309355
+2020-04,companies,Specific companies frequently discussed in CS job-market conversations.,10293,437,0.042456038084134846,0.6224256292906178,0.37757437070938216
+2020-05,companies,Specific companies frequently discussed in CS job-market conversations.,12010,380,0.03164029975020816,0.5921052631578947,0.40789473684210525
+2020-06,companies,Specific companies frequently discussed in CS job-market conversations.,11347,320,0.028201286683704942,0.575,0.425
+2020-07,companies,Specific companies frequently discussed in CS job-market conversations.,13086,386,0.029497172550817668,0.6321243523316062,0.36787564766839376
+2020-08,companies,Specific companies frequently discussed in CS job-market conversations.,13552,536,0.03955135773317592,0.6138059701492538,0.38619402985074625
+2020-09,companies,Specific companies frequently discussed in CS job-market conversations.,13522,743,0.05494749297441207,0.6244952893674294,0.3755047106325707
+2020-10,companies,Specific companies frequently discussed in CS job-market conversations.,14336,983,0.06856863839285714,0.646998982706002,0.35300101729399797
+2020-11,companies,Specific companies frequently discussed in CS job-market conversations.,12600,856,0.06793650793650793,0.6740654205607477,0.32593457943925236
+2020-12,companies,Specific companies frequently discussed in CS job-market conversations.,12752,871,0.0683030112923463,0.6130884041331802,0.3869115958668197
+2021-01,companies,Specific companies frequently discussed in CS job-market conversations.,13670,962,0.0703730797366496,0.6330561330561331,0.36694386694386694
+2021-02,companies,Specific companies frequently discussed in CS job-market conversations.,13627,954,0.07000807220958391,0.6174004192872118,0.38259958071278827
+2021-03,companies,Specific companies frequently discussed in CS job-market conversations.,14445,692,0.047905849775008655,0.6083815028901735,0.3916184971098266
+2021-04,companies,Specific companies frequently discussed in CS job-market conversations.,14273,603,0.04224760036432425,0.6202321724709784,0.37976782752902155
+2021-05,companies,Specific companies frequently discussed in CS job-market conversations.,14788,546,0.03692182850960238,0.5769230769230769,0.4230769230769231
+2021-06,companies,Specific companies frequently discussed in CS job-market conversations.,14680,547,0.03726158038147139,0.5319926873857403,0.4680073126142596
+2021-07,companies,Specific companies frequently discussed in CS job-market conversations.,14888,694,0.04661472326706072,0.5763688760806917,0.42363112391930835
+2021-08,companies,Specific companies frequently discussed in CS job-market conversations.,16028,935,0.058335413027202396,0.6074866310160428,0.3925133689839572
+2021-09,companies,Specific companies frequently discussed in CS job-market conversations.,16144,853,0.05283696729435084,0.593200468933177,0.406799531066823
+2021-10,companies,Specific companies frequently discussed in CS job-market conversations.,17078,984,0.057617988054807355,0.6219512195121951,0.3780487804878049
+2021-11,companies,Specific companies frequently discussed in CS job-market conversations.,16965,1112,0.06554671382257589,0.6384892086330936,0.36151079136690645
+2021-12,companies,Specific companies frequently discussed in CS job-market conversations.,15373,978,0.06361803161386848,0.6073619631901841,0.39263803680981596
+2022-01,companies,Specific companies frequently discussed in CS job-market conversations.,17867,1119,0.0626294285554374,0.6264521894548705,0.3735478105451296
+2022-02,companies,Specific companies frequently discussed in CS job-market conversations.,16700,1123,0.06724550898203593,0.6420302760463046,0.3579697239536955
+2022-03,companies,Specific companies frequently discussed in CS job-market conversations.,18578,1138,0.0612552481429648,0.656414762741652,0.343585237258348
+2022-04,companies,Specific companies frequently discussed in CS job-market conversations.,16850,949,0.056320474777448074,0.6459430979978925,0.3540569020021075
+2022-05,companies,Specific companies frequently discussed in CS job-market conversations.,16602,817,0.049210938441151666,0.6487148102815178,0.35128518971848227
+2022-06,companies,Specific companies frequently discussed in CS job-market conversations.,16563,748,0.045160900802994626,0.56951871657754,0.4304812834224599
+2022-07,companies,Specific companies frequently discussed in CS job-market conversations.,16956,891,0.052547770700636945,0.5914702581369248,0.40852974186307517
+2022-08,companies,Specific companies frequently discussed in CS job-market conversations.,18581,905,0.048705667079274526,0.625414364640884,0.37458563535911604
+2022-09,companies,Specific companies frequently discussed in CS job-market conversations.,17167,909,0.052950428147026274,0.6226622662266227,0.3773377337733773
+2022-10,companies,Specific companies frequently discussed in CS job-market conversations.,18001,1022,0.056774623632020446,0.6281800391389433,0.37181996086105673
+2022-11,companies,Specific companies frequently discussed in CS job-market conversations.,16360,896,0.05476772616136919,0.6383928571428571,0.36160714285714285
+2022-12,companies,Specific companies frequently discussed in CS job-market conversations.,14420,596,0.04133148404993065,0.6409395973154363,0.35906040268456374
+2023-01,companies,Specific companies frequently discussed in CS job-market conversations.,16029,613,0.03824318422858569,0.5579119086460033,0.44208809135399674
+2023-02,companies,Specific companies frequently discussed in CS job-market conversations.,14502,576,0.03971865949524204,0.5885416666666666,0.4114583333333333
+2023-03,companies,Specific companies frequently discussed in CS job-market conversations.,16521,522,0.03159615035409479,0.5727969348659003,0.4272030651340996
+2023-04,companies,Specific companies frequently discussed in CS job-market conversations.,15180,379,0.024967061923583663,0.5963060686015831,0.40369393139841686
+2023-05,companies,Specific companies frequently discussed in CS job-market conversations.,16090,364,0.02262274704785581,0.5137362637362637,0.48626373626373626
+2023-06,companies,Specific companies frequently discussed in CS job-market conversations.,13784,509,0.036926871735345326,0.5520628683693517,0.44793713163064836
+2023-07,companies,Specific companies frequently discussed in CS job-market conversations.,17379,595,0.03423672248115542,0.4957983193277311,0.5042016806722689
+2023-08,companies,Specific companies frequently discussed in CS job-market conversations.,20377,803,0.03940717475585219,0.49813200498132004,0.50186799501868
+2023-09,companies,Specific companies frequently discussed in CS job-market conversations.,17961,697,0.03880630254440176,0.5193687230989957,0.4806312769010043
+2023-10,companies,Specific companies frequently discussed in CS job-market conversations.,19012,867,0.04560277719335157,0.5374855824682814,0.46251441753171857
+2023-11,companies,Specific companies frequently discussed in CS job-market conversations.,18051,884,0.04897235610215501,0.5667420814479638,0.4332579185520362
+2023-12,companies,Specific companies frequently discussed in CS job-market conversations.,16704,859,0.05142480842911877,0.5587892898719441,0.4412107101280559
+2024-01,companies,Specific companies frequently discussed in CS job-market conversations.,21876,1043,0.04767782044249406,0.5819750719079578,0.41802492809204217
+2024-02,companies,Specific companies frequently discussed in CS job-market conversations.,20704,1074,0.05187403400309119,0.5726256983240223,0.4273743016759777
+2024-03,companies,Specific companies frequently discussed in CS job-market conversations.,21377,966,0.04518875426860645,0.577639751552795,0.422360248447205
+2024-04,companies,Specific companies frequently discussed in CS job-market conversations.,20606,827,0.04013394157041638,0.528415961305925,0.47158403869407495
+2024-05,companies,Specific companies frequently discussed in CS job-market conversations.,20097,758,0.03771707219983082,0.4868073878627968,0.5131926121372031
+2024-06,companies,Specific companies frequently discussed in CS job-market conversations.,18782,642,0.03418166329464381,0.5077881619937694,0.49221183800623053
+2024-07,companies,Specific companies frequently discussed in CS job-market conversations.,18922,745,0.039372159391184866,0.48590604026845635,0.5140939597315436
+2024-08,companies,Specific companies frequently discussed in CS job-market conversations.,20817,856,0.041120238266801175,0.5046728971962616,0.4953271028037383
+2024-09,companies,Specific companies frequently discussed in CS job-market conversations.,20235,961,0.047491969360019766,0.5411030176899063,0.4588969823100936
+2024-10,companies,Specific companies frequently discussed in CS job-market conversations.,21105,1379,0.06533996683250415,0.625090645395214,0.3749093546047861
+2024-11,companies,Specific companies frequently discussed in CS job-market conversations.,18303,1344,0.07343058514997541,0.6011904761904762,0.39880952380952384
+2024-12,companies,Specific companies frequently discussed in CS job-market conversations.,16670,1082,0.06490701859628074,0.5859519408502772,0.41404805914972276
+2025-01,companies,Specific companies frequently discussed in CS job-market conversations.,18594,1219,0.06555878240292567,0.6029532403609515,0.3970467596390484
+2025-02,companies,Specific companies frequently discussed in CS job-market conversations.,17847,945,0.0529500756429652,0.6095238095238096,0.3904761904761905
+2025-03,companies,Specific companies frequently discussed in CS job-market conversations.,20556,987,0.04801517805020432,0.5491388044579534,0.4508611955420466
+2025-04,companies,Specific companies frequently discussed in CS job-market conversations.,18080,760,0.0420353982300885,0.5394736842105263,0.4605263157894737
+2025-05,companies,Specific companies frequently discussed in CS job-market conversations.,18591,752,0.04044967995266527,0.5106382978723404,0.48936170212765956
+2025-06,companies,Specific companies frequently discussed in CS job-market conversations.,18193,677,0.037212114549552026,0.5642540620384048,0.4357459379615953
+2025-07,companies,Specific companies frequently discussed in CS job-market conversations.,19902,746,0.03748366998291629,0.5080428954423593,0.49195710455764075
+2025-08,companies,Specific companies frequently discussed in CS job-market conversations.,19416,742,0.03821590440873506,0.5309973045822103,0.46900269541778977
+2025-09,companies,Specific companies frequently discussed in CS job-market conversations.,18363,829,0.045145128791591785,0.5934861278648975,0.40651387213510254
+2025-10,companies,Specific companies frequently discussed in CS job-market conversations.,18377,1290,0.07019644120367852,0.5992248062015504,0.4007751937984496
+2025-11,companies,Specific companies frequently discussed in CS job-market conversations.,16892,1018,0.06026521430262846,0.6110019646365422,0.3889980353634578
+2025-12,companies,Specific companies frequently discussed in CS job-market conversations.,14982,868,0.057936190094780404,0.5817972350230415,0.4182027649769585
+2017-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8729,118,0.0135181578645893,0.4067796610169492,0.5932203389830508
+2017-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8040,103,0.01281094527363184,0.47572815533980584,0.5242718446601942
+2017-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8004,123,0.015367316341829085,0.4959349593495935,0.5040650406504065
+2017-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7189,106,0.014744748921964111,0.4056603773584906,0.5943396226415094
+2017-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7305,112,0.015331964407939767,0.36607142857142855,0.6339285714285714
+2017-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7693,153,0.0198882100610945,0.47058823529411764,0.5294117647058824
+2017-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7904,139,0.017586032388663967,0.4676258992805755,0.5323741007194245
+2017-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8119,137,0.01687399926099273,0.3795620437956204,0.6204379562043796
+2017-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7748,133,0.017165720185854414,0.40601503759398494,0.5939849624060151
+2017-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8709,136,0.01561602939487886,0.45588235294117646,0.5441176470588235
+2017-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8171,137,0.01676661363358218,0.4744525547445255,0.5255474452554745
+2017-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",6999,141,0.020145735105015,0.44680851063829785,0.5531914893617021
+2018-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8282,137,0.01654189809224825,0.45255474452554745,0.5474452554744526
+2018-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",7837,169,0.021564374122751053,0.4378698224852071,0.5621301775147929
+2018-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9063,165,0.018205892088712348,0.509090909090909,0.4909090909090909
+2018-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8898,185,0.020791189031242975,0.4918918918918919,0.5081081081081081
+2018-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9257,195,0.02106513989413417,0.5076923076923077,0.49230769230769234
+2018-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9102,137,0.015051637002856515,0.5474452554744526,0.45255474452554745
+2018-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9040,134,0.014823008849557522,0.4701492537313433,0.5298507462686567
+2018-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9923,144,0.01451174040108838,0.5,0.5
+2018-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9017,130,0.014417211933015416,0.4076923076923077,0.5923076923076923
+2018-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10619,167,0.01572652792164987,0.5089820359281437,0.49101796407185627
+2018-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9759,202,0.020698842094476894,0.5247524752475248,0.4752475247524752
+2018-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",8845,144,0.01628038439796495,0.5138888888888888,0.4861111111111111
+2019-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10569,205,0.019396347809631943,0.5024390243902439,0.4975609756097561
+2019-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",9864,174,0.017639902676399026,0.4827586206896552,0.5172413793103449
+2019-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11056,180,0.016280752532561504,0.5666666666666667,0.43333333333333335
+2019-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10953,200,0.018259837487446362,0.485,0.515
+2019-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11401,197,0.017279186036312604,0.5177664974619289,0.48223350253807107
+2019-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10804,204,0.01888189559422436,0.4411764705882353,0.5588235294117647
+2019-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11069,215,0.019423615502755443,0.42790697674418604,0.5720930232558139
+2019-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12861,245,0.019049840603374543,0.5306122448979592,0.46938775510204084
+2019-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11400,169,0.014824561403508772,0.4556213017751479,0.5443786982248521
+2019-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12457,220,0.017660752990286587,0.5227272727272727,0.4772727272727273
+2019-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11135,208,0.01867983834755276,0.5096153846153846,0.49038461538461536
+2019-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10097,184,0.018223234624145785,0.5760869565217391,0.42391304347826086
+2020-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12317,226,0.01834862385321101,0.49557522123893805,0.504424778761062
+2020-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12769,253,0.019813611089357037,0.5889328063241107,0.41106719367588934
+2020-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11830,225,0.019019442096365174,0.5911111111111111,0.4088888888888889
+2020-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",10293,255,0.024774118332847567,0.5568627450980392,0.44313725490196076
+2020-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12010,271,0.022564529558701082,0.5313653136531366,0.46863468634686345
+2020-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",11347,262,0.023089803472283423,0.5648854961832062,0.4351145038167939
+2020-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13086,246,0.01879871618523613,0.5284552845528455,0.4715447154471545
+2020-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13552,274,0.020218417945690674,0.5218978102189781,0.4781021897810219
+2020-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13522,240,0.017748853719863924,0.5416666666666666,0.4583333333333333
+2020-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14336,248,0.017299107142857144,0.5806451612903226,0.41935483870967744
+2020-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12600,230,0.018253968253968255,0.5782608695652174,0.4217391304347826
+2020-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",12752,236,0.0185069008782936,0.4872881355932203,0.5127118644067796
+2021-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13670,231,0.0168983174835406,0.5281385281385281,0.47186147186147187
+2021-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13627,255,0.01871284948998312,0.5137254901960784,0.48627450980392156
+2021-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14445,271,0.018760816891658014,0.4944649446494465,0.5055350553505535
+2021-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14273,297,0.02080851958242836,0.5353535353535354,0.46464646464646464
+2021-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14788,307,0.020760075737084122,0.498371335504886,0.501628664495114
+2021-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14680,284,0.019346049046321527,0.4859154929577465,0.5140845070422535
+2021-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14888,293,0.019680279419666845,0.5255972696245734,0.47440273037542663
+2021-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16028,230,0.014349887696531071,0.49130434782608695,0.508695652173913
+2021-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16144,218,0.01350346878097126,0.5137614678899083,0.48623853211009177
+2021-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17078,231,0.013526174025061483,0.47619047619047616,0.5238095238095238
+2021-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16965,246,0.014500442086648984,0.483739837398374,0.516260162601626
+2021-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",15373,243,0.015806934235347687,0.5308641975308642,0.4691358024691358
+2022-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17867,273,0.015279565679744781,0.5274725274725275,0.4725274725274725
+2022-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16700,246,0.014730538922155688,0.5040650406504065,0.4959349593495935
+2022-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18578,250,0.013456776832813004,0.548,0.452
+2022-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16850,225,0.013353115727002967,0.5466666666666666,0.4533333333333333
+2022-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16602,245,0.014757258161667269,0.5877551020408164,0.4122448979591837
+2022-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16563,249,0.01503350842238725,0.5823293172690763,0.41767068273092367
+2022-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16956,226,0.013328615239443264,0.584070796460177,0.415929203539823
+2022-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18581,252,0.013562240998869813,0.5793650793650794,0.42063492063492064
+2022-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17167,237,0.013805557173647114,0.5316455696202531,0.46835443037974683
+2022-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18001,242,0.013443697572357092,0.5785123966942148,0.4214876033057851
+2022-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16360,233,0.01424205378973105,0.575107296137339,0.4248927038626609
+2022-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14420,385,0.02669902912621359,0.6025974025974026,0.3974025974025974
+2023-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16029,393,0.02451806101441138,0.5470737913486005,0.4529262086513995
+2023-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14502,358,0.024686250172390015,0.5586592178770949,0.441340782122905
+2023-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16521,539,0.03262514375643121,0.536178107606679,0.46382189239332094
+2023-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",15180,401,0.026416337285902505,0.5536159600997507,0.4463840399002494
+2023-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16090,467,0.029024238657551275,0.5438972162740899,0.45610278372591007
+2023-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",13784,391,0.028366221706326175,0.5652173913043478,0.43478260869565216
+2023-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17379,628,0.03613556591288337,0.45063694267515925,0.5493630573248408
+2023-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20377,635,0.031162585267703782,0.49606299212598426,0.5039370078740157
+2023-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17961,602,0.033517064751405826,0.5083056478405316,0.49169435215946844
+2023-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",19012,607,0.031927203871239214,0.5321252059308073,0.46787479406919275
+2023-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18051,662,0.03667386848374051,0.49697885196374625,0.5030211480362538
+2023-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16704,616,0.036877394636015325,0.5487012987012987,0.4512987012987013
+2024-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",21876,802,0.036661181203145,0.516209476309227,0.4837905236907731
+2024-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20704,775,0.03743238021638331,0.4632258064516129,0.5367741935483871
+2024-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",21377,994,0.04649857323291388,0.47484909456740443,0.5251509054325956
+2024-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20606,811,0.03935746869843735,0.4475955610357583,0.5524044389642416
+2024-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20097,889,0.04423545802856148,0.4668166479190101,0.5331833520809899
+2024-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18782,751,0.03998509210946651,0.5019973368841545,0.4980026631158455
+2024-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18922,858,0.04534404396998203,0.5034965034965035,0.4965034965034965
+2024-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20817,846,0.040639861651534805,0.4858156028368794,0.5141843971631206
+2024-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20235,846,0.04180874722016308,0.47754137115839246,0.5224586288416075
+2024-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",21105,851,0.040322198531153756,0.5076380728554641,0.49236192714453586
+2024-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18303,847,0.04627656668305742,0.5147579693034239,0.4852420306965762
+2024-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16670,890,0.05338932213557288,0.5303370786516854,0.4696629213483146
+2025-01,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18594,1165,0.06265461976981822,0.4678111587982833,0.5321888412017167
+2025-02,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",17847,1131,0.06337199529332661,0.5128205128205128,0.48717948717948717
+2025-03,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",20556,1197,0.05823117338003503,0.47117794486215536,0.5288220551378446
+2025-04,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18080,1275,0.07051991150442478,0.48784313725490197,0.5121568627450981
+2025-05,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18591,1435,0.07718788661180141,0.4794425087108014,0.5205574912891986
+2025-06,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18193,1427,0.07843676139174408,0.48563419761737914,0.5143658023826209
+2025-07,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",19902,1546,0.07768063511204903,0.4760672703751617,0.5239327296248383
+2025-08,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",19416,1479,0.0761742892459827,0.4753211629479378,0.5246788370520622
+2025-09,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18363,1234,0.06720034852692915,0.446515397082658,0.553484602917342
+2025-10,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",18377,1331,0.07242749088534581,0.4462809917355372,0.5537190082644629
+2025-11,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",16892,1267,0.07500591996211224,0.4648776637726914,0.5351223362273086
+2025-12,ai_llm,"AI, LLMs, ChatGPT, Copilot, and generative AI topics.",14982,1184,0.079028167133894,0.4518581081081081,0.5481418918918919

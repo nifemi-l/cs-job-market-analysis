@@ -1,0 +1,26 @@
+__pycache__/
+.DS_Store
+
+# Model binaries (large)
+src/models/*.joblib
+
+# Course / local artifacts
+artifacts/
+
+# Secrets
+.env
+**/.env
+
+# Sentiment140 (large)
+src/data/sentiment140/training.1600000.processed.noemoticon.csv
+src/data/sentiment140/sentiment140_archive.zip
+src/data/sentiment140/archive.zip
+
+# Raw / torrent Reddit dumps
+src/data/reddit_data/
+
+# Heavy Reddit pipeline outputs
+src/data/reddit/filtered/
+src/data/reddit/processed/
+src/data/reddit/predictions/
+src/data/reddit/analysis/
