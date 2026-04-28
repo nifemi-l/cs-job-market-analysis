@@ -1,5 +1,7 @@
 # EECS 767 Final Project
 
+Authors: Anahita Memar, Nifemi Lawal
+
 CS job-market sentiment analysis across market shifts (pre-COVID, COVID, post-COVID).
 We built an end-to-end text pipeline using Reddit data and a sentiment model trained
 on Sentiment140.
