@@ -49,6 +49,10 @@ The final written report is available in:
 
 - `docs/EECS_767_Project_Report`
 
+The project website is available at:
+
+- [nifemilawal.com/research/reddit-job-market-sentiment](https://nifemilawal.com/research/reddit-job-market-sentiment/)
+
 ## Data Inputs
 
 - Sentiment140 CSV:

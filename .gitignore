@@ -24,3 +24,5 @@ src/data/reddit/filtered/
 src/data/reddit/processed/
 src/data/reddit/predictions/
 src/data/reddit/analysis/
+
+.claude
